@@ -2,6 +2,8 @@
 
 HydraWitness is an advisory evidence-verification layer for engineering and security teams. It investigates whether release recommendations share origins, locates referenced missing artifacts, and persists graph repairs for later questions. The current demonstration uses synthetic evidence and provides advisory decisions; it is not a production release gate.
 
+**Try the [live synthetic demo](https://hydrawitness-hackathon.onrender.com/).** It runs the open-source HydraDB engine on Render's free tier. Visitors share one temporary graph; it resets when the service sleeps or restarts and can take time to wake up. If someone already ran the investigation, the graph will show the repaired state.
+
 For a disposable Docker demo, run `docker build -t hydrawitness .` and then `docker run --rm -p 127.0.0.1:8765:8765 -e PORT=8765 -e HYDRAWITNESS_BIND=0.0.0.0 hydrawitness`. Open `http://127.0.0.1:8765`. The Render free demo starts a fresh synthetic graph on each service start; visitors share it, and all changes disappear on restart. Do not use it for sensitive data.
 
 ## Run the demonstration
@@ -43,7 +45,7 @@ A subsequent [artifact-only ablation and separate manual challenge](docs/ablatio
 
 ## Codex MCP and tests
 
-The repository-scoped `.codex/config.toml` configures the real stdio MCP server for trusted projects. The launch command prints `HYDRAWITNESS_SCOPE`; export that value in a shell before starting Codex from this directory. Ask the agent to use `verify_evidence` on `checkout-deployment`, then `assess_and_improve`. A new session using the same scope can call `verify_evidence` on `checkout-security`. Scope and policy are controlled by server configuration; the tools are advisory and do not deploy. The repository contains two [actual Codex session traces](demo/codex-session-1.jsonl) (the second is `demo/codex-session-2.jsonl`). Unrelated Waggle events were removed; HydraWitness calls and agent messages remain unchanged. The captures use two source reports, while the newer dashboard uses four.
+To use the MCP integration, configure a trusted Codex project to run `.venv/bin/python -m hydrawitness.mcp_server` and pass `HYDRA_URL`, `HYDRA_TOKEN`, and `HYDRAWITNESS_SCOPE` through the environment. The launch command prints `HYDRAWITNESS_SCOPE`; export that value in a shell before starting Codex from this directory. Ask the agent to use `verify_evidence` on `checkout-deployment`, then `assess_and_improve`. A new session using the same scope can call `verify_evidence` on `checkout-security`. Scope and policy are controlled by server configuration; the tools are advisory and do not deploy. The repository contains two [actual Codex session traces](demo/codex-session-1.jsonl) (the second is `demo/codex-session-2.jsonl`). Unrelated Waggle events were removed; HydraWitness calls and agent messages remain unchanged. The captures use two source reports, while the newer dashboard uses four.
 
 ```sh
 .venv/bin/python -m unittest discover -s tests -v
@@ -62,6 +64,6 @@ A separate disposable HydraDB node was started on `127.0.0.1:18444` using `.hydr
 
 ## Submission demo
 
-The [2:10 final cut](demo/hydrawitness-final.mp4) and [2:33 earlier draft](demo/hydrawitness-submission-draft.mp4) combine a slowed recording of a real dashboard investigation with clearly labeled replays of two saved real Codex CLI sessions. The dashboard and Codex traces use different synthetic graph scopes. Narration was generated using the local system voice. The [50-second silent capture](demo/hydrawitness-demo-draft.mp4) is also retained. Neither video performs a production deployment.
+A 2:10 final walkthrough was recorded locally and is awaiting upload. It combines a recording of a real dashboard investigation with labeled replays of two saved Codex CLI sessions. The dashboard and Codex traces use different synthetic graph scopes. Narration was generated using a local system voice; no deployment is performed in the recording. Video and raw recordings are excluded from this repository.
 
 To capture a new silent browser recording, install optional recording dependencies with `.venv/bin/pip install playwright==1.65.2` and `.venv/bin/python -m playwright install ffmpeg`, then run `scripts/record-demo.sh`. It starts its own dashboard on port 8766 with a new recovery-store scope, records a real graph repair, and stops only the server it started. It replays the saved actual Codex events; use `.venv/bin/python demo/run_codex.py` for new real sessions. This recording script assumes Google Chrome is installed at the standard macOS path.
