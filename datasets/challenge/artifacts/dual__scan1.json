@@ -1,0 +1,12 @@
+{
+  "content": "Manually authored test artifact for dual/scan1",
+  "external_id": "dual/scan1",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "outcome": "passed",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "Synthetic operational evidence: dual/scan1",
+  "type": "security_scan"
+}

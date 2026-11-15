@@ -1,0 +1,13 @@
+*
+!requirements.txt
+!hydrawitness/
+!hydrawitness/*.py
+!datasets/
+!datasets/**
+!frontend/
+!frontend/index.html
+!evals/
+!evals/results/
+!evals/results/iterations.csv
+!scripts/
+!scripts/render-start.sh

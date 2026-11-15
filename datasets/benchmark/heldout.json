@@ -1,0 +1,238 @@
+[
+  {
+    "group": "shared-origin",
+    "id": "held-00-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the production release eligibility for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "shared-origin",
+    "id": "held-00-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the operational readiness assessment for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "held-01-0",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What is the production release eligibility for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "held-01-1",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What is the operational readiness assessment for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "held-02-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the production release eligibility for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "held-02-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the operational readiness assessment for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "held-03-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the production release eligibility for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "held-03-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the operational readiness assessment for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "held-04-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the production release eligibility for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "held-04-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the operational readiness assessment for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "stale",
+    "id": "held-05-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the production release eligibility for billing release?",
+    "sources": [
+      "stale/report"
+    ]
+  },
+  {
+    "group": "stale",
+    "id": "held-05-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the operational readiness assessment for billing release?",
+    "sources": [
+      "stale/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "held-06-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the production release eligibility for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "held-06-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the operational readiness assessment for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "missing-reference",
+    "id": "held-07-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the production release eligibility for search deployment?",
+    "sources": [
+      "missingref/report"
+    ]
+  },
+  {
+    "group": "missing-reference",
+    "id": "held-07-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the operational readiness assessment for search deployment?",
+    "sources": [
+      "missingref/report"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "held-08-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the production release eligibility for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "held-08-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What is the operational readiness assessment for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "held-09-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the production release eligibility for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "held-09-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What is the operational readiness assessment for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  }
+]

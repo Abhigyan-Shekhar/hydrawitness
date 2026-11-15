@@ -1,0 +1,59 @@
+{
+  "conflicting-checks": {
+    "verdict": "BLOCK",
+    "verified_roots": [
+      "dual/root"
+    ]
+  },
+  "cycle-with-branch": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "diamond": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "d/root"
+    ]
+  },
+  "optional-failed": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "opt/root"
+    ]
+  },
+  "partial-branch": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "separate-incomplete-support": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "split/ok"
+    ]
+  },
+  "stale-scan": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "aged/root"
+    ]
+  },
+  "stale-upstream": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "three-origins": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "tri/a",
+      "tri/b",
+      "tri/c"
+    ]
+  },
+  "two-origin-branch": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "b/one",
+      "b/two"
+    ]
+  }
+}

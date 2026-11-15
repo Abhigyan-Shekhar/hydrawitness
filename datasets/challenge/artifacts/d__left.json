@@ -1,0 +1,13 @@
+{
+  "content": "Manually authored test artifact for d/left",
+  "external_id": "d/left",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [
+    "d/root"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "Synthetic operational evidence: d/left",
+  "type": "report"
+}

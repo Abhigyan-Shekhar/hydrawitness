@@ -1,0 +1,13 @@
+{
+  "content": "Manually authored test artifact for ring/c",
+  "external_id": "ring/c",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [
+    "ring/a"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "Synthetic operational evidence: ring/c",
+  "type": "report"
+}

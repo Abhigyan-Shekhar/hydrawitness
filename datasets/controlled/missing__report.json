@@ -1,0 +1,11 @@
+{
+  "external_id": "missing/report",
+  "type": "report",
+  "references": [],
+  "required": [
+    "missing/absent-scan"
+  ],
+  "root_verified": true,
+  "observed_at": "2026-11-14T00:00:00Z",
+  "content": "Synthetic artifact missing/report"
+}

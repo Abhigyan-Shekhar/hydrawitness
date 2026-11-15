@@ -1,0 +1,1 @@
+{"external_id":"demo/engineering","type":"report","title":"Engineering discussion","references":["demo/security-summary"],"required":[],"root_verified":false,"observed_at":"2026-11-14T00:00:00Z","content":"The security team confirmed checkout-v2 is green.","origin_system":"synthetic discussion"}

@@ -1,0 +1,13 @@
+{
+  "content": "Synthetic engineering evidence for passed/report. Release readiness observation; see recorded references.",
+  "external_id": "passed/report",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [],
+  "required": [
+    "passed/scan"
+  ],
+  "root_verified": true,
+  "title": "passed/report: engineering readiness report",
+  "type": "report"
+}

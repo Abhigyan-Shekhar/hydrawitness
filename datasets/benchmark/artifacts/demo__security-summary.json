@@ -1,0 +1,13 @@
+{
+  "content": "Synthetic engineering evidence for demo/security-summary. Release readiness observation; see recorded references.",
+  "external_id": "demo/security-summary",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [
+    "demo/qa"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "demo/security-summary: engineering readiness report",
+  "type": "report"
+}

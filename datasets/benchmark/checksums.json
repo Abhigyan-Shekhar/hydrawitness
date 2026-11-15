@@ -1,0 +1,29 @@
+{
+  "dataset_version": "hydrawitness-synthetic-v1",
+  "files": {
+    "artifacts/contradiction__fail.json": "f1549c6d0da58aef9e7347926f3298923e8b2b547a11edce553c738e462bd286",
+    "artifacts/contradiction__pass.json": "c415b73bd0c81919669f4f9792244357defd11a32717412e187376b678e7b260",
+    "artifacts/contradiction__report.json": "f5bdf85d6051e7327eaacd7a3e8a198b39ad99e285d975533de7259f67bda8a5",
+    "artifacts/cycle__a.json": "0699640da0d7b2eedad9689b8c54919657a935cbf49441084b0bfa3d49ab0c1b",
+    "artifacts/cycle__b.json": "164de13888fee1ea64c78d53fd202684192ae7d7973bab5deb84374f4a7be132",
+    "artifacts/demo__ci.json": "7d01289766a4653b0665809939efefa637406fbf8fb54c3d16a4ff90a2fb6d82",
+    "artifacts/demo__qa.json": "b132c32e7d625340143337a51c008ee48f36562fe8161015f2b95b61f6f24c53",
+    "artifacts/demo__scan.json": "7fb0a09e37b672d59a722dd5117e04c815f98aacbdc3e67670441e9f05f0e134",
+    "artifacts/demo__security-summary.json": "4b8f5a4a7b0564cbca24e34858e8816a7afdf56a820204b5f9da190a6a1699f7",
+    "artifacts/independent__a.json": "3149dfcaadb20c0248477ce2e58c35d016c3e942cece7a56498a3b480ce5eb0f",
+    "artifacts/independent__b.json": "dffe6237194edd5e8f41695889e5e69d4d33db37a43dc104e987a0db34289e39",
+    "artifacts/independent__scan.json": "2d5795df0fe38cf10b179ad31901479dfdf70a1c9b2d5b73b05f44f1c051f896",
+    "artifacts/missing__report.json": "2ea0c17344760e2a205608668feb195d7f895b1a5d3e52a90e85255507e75806",
+    "artifacts/missingref__report.json": "f2e4525c0f86e3fda7342b53a690ac5087f81f5584502bc682ceda7f05ec28f1",
+    "artifacts/multihop__a.json": "2a658b694732746e1aa021f4d0d190b1847cb3828d6439f8d613648634868ab4",
+    "artifacts/multihop__b.json": "bf485d4d3df3e52076118ce671ecb479b2c0271e382ca468207097085b3c01dd",
+    "artifacts/multihop__c.json": "db9a1792d65843e465d524fed19fa4f0a1862b92abf659e8d0a503374e27478a",
+    "artifacts/passed__report.json": "bfd1262cd5b289ddca27c80593e38192ee26ab5de19c537bfb387168cbe5f9aa",
+    "artifacts/passed__scan.json": "0451b3133927acb4cee088b395f8af1b06631cc8e208f024c7e97d600aca7b2b",
+    "artifacts/stale__report.json": "20add86dea66d38acc99a2d104fbf26b5600bfbb3cb97df7c258f51bbab3ccdf",
+    "artifacts/unknown__report.json": "8609b8756798137a14499327b2ec736a745b821af2cfe1ffa2dd6ce6aad151b0",
+    "gold.json": "cf80f3b310da5633bd9e3a9a8fc86ab43d310425188e94abcd6fe5b18a465231",
+    "heldout.json": "1568fa5d326ffb50a52f8f63f4a5243373bf07acc291c0e8880efea88459eb16",
+    "learning.json": "b2d72b85deb1d372343e6d541d448d39648e9b53717e0e781498606ec6092e9e"
+  }
+}

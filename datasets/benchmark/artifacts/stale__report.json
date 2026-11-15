@@ -1,0 +1,11 @@
+{
+  "content": "Synthetic engineering evidence for stale/report. Release readiness observation; see recorded references.",
+  "external_id": "stale/report",
+  "observed_at": "2020-01-01T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "stale/report: engineering readiness report",
+  "type": "report"
+}

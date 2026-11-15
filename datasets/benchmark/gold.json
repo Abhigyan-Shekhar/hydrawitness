@@ -1,0 +1,108 @@
+{
+  "held-00-0": {
+    "verdict": "BLOCK",
+    "verified_roots": [
+      "demo/ci"
+    ]
+  },
+  "held-00-1": {
+    "verdict": "BLOCK",
+    "verified_roots": [
+      "demo/ci"
+    ]
+  },
+  "held-01-0": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  "held-01-1": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  "held-02-0": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "missing/report"
+    ]
+  },
+  "held-02-1": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": [
+      "missing/report"
+    ]
+  },
+  "held-03-0": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-03-1": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-04-0": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-04-1": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-05-0": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-05-1": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-06-0": {
+    "verdict": "BLOCK",
+    "verified_roots": [
+      "contradiction/report"
+    ]
+  },
+  "held-06-1": {
+    "verdict": "BLOCK",
+    "verified_roots": [
+      "contradiction/report"
+    ]
+  },
+  "held-07-0": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-07-1": {
+    "verdict": "REVIEW_REQUIRED",
+    "verified_roots": []
+  },
+  "held-08-0": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "multihop/c"
+    ]
+  },
+  "held-08-1": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "multihop/c"
+    ]
+  },
+  "held-09-0": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "passed/report"
+    ]
+  },
+  "held-09-1": {
+    "verdict": "APPROVE",
+    "verified_roots": [
+      "passed/report"
+    ]
+  }
+}

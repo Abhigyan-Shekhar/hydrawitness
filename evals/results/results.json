@@ -1,0 +1,2426 @@
+{
+  "all_queries": {
+    "p50_ms": 1.435749996744562,
+    "p95_ms": 22.217792000446934,
+    "query_count": 1284,
+    "query_shapes": {
+      "CREATE (n:Claim {id: $id, payload: $payload})": {
+        "count": 60,
+        "total_ms": 1447.4834169668611
+      },
+      "CREATE (n:Improvement {id: $id, payload: $payload})": {
+        "count": 9,
+        "total_ms": 203.98062601452693
+      },
+      "CREATE (n:Source {id: $id, payload: $payload})": {
+        "count": 21,
+        "total_ms": 494.79070799134206
+      },
+      "MATCH (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b}) RETURN b.id AS id": {
+        "count": 9,
+        "total_ms": 13.212582001870032
+      },
+      "MATCH (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b}) RETURN b.id AS id": {
+        "count": 6,
+        "total_ms": 8.464209007797763
+      },
+      "MATCH (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b}) RETURN b.id AS id": {
+        "count": 5,
+        "total_ms": 7.438918000843842
+      },
+      "MATCH (a:Source {id: $a})-[:SUPPORTS]->(b:Claim {id: $b}) RETURN b.id AS id": {
+        "count": 74,
+        "total_ms": 106.08949704328552
+      },
+      "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+        "count": 169,
+        "total_ms": 208.5998749389546
+      },
+      "MATCH (n:Claim {id: $id}) RETURN n.payload AS payload": {
+        "count": 60,
+        "total_ms": 104.67183398577617
+      },
+      "MATCH (n:Improvement {id: $id}) RETURN n.payload AS payload": {
+        "count": 9,
+        "total_ms": 10.158333003346343
+      },
+      "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+        "count": 85,
+        "total_ms": 127.38153502868954
+      },
+      "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+        "count": 16,
+        "total_ms": 20.81591700698482
+      },
+      "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+        "count": 249,
+        "total_ms": 357.42932401626604
+      },
+      "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+        "count": 249,
+        "total_ms": 343.56432399363257
+      },
+      "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+        "count": 169,
+        "total_ms": 275.6449599255575
+      },
+      "MERGE (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b})": {
+        "count": 9,
+        "total_ms": 192.30145999608794
+      },
+      "MERGE (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b})": {
+        "count": 6,
+        "total_ms": 114.62412599939853
+      },
+      "MERGE (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b})": {
+        "count": 5,
+        "total_ms": 110.16595900582615
+      },
+      "MERGE (a:Source {id: $a})-[:SUPPORTS]->(b:Claim {id: $b})": {
+        "count": 74,
+        "total_ms": 1638.0920020092162
+      }
+    }
+  },
+  "checkpoints": [
+    {
+      "evaluation": {
+        "accuracy": {
+          "denominator": 20,
+          "numerator": 10,
+          "rate": 0.5
+        },
+        "correct_review": {
+          "denominator": 10,
+          "numerator": 10,
+          "rate": 1.0
+        },
+        "duration_seconds": 0.11525049999909243,
+        "false_approval": {
+          "denominator": 14,
+          "numerator": 0,
+          "rate": 0.0
+        },
+        "predictions": [
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 3,
+            "group": "shared-origin",
+            "id": "held-00-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 3,
+            "group": "shared-origin",
+            "id": "held-00-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 2,
+            "group": "independent",
+            "id": "held-01-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 2,
+            "group": "independent",
+            "id": "held-01-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          }
+        ],
+        "queries": {
+          "p50_ms": 1.2524999983725138,
+          "p95_ms": 1.655708001635503,
+          "query_count": 88,
+          "query_shapes": {
+            "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+              "count": 20,
+              "total_ms": 23.550791993329767
+            },
+            "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 24,
+              "total_ms": 30.033664988877717
+            },
+            "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 24,
+              "total_ms": 29.42854201683076
+            },
+            "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+              "count": 20,
+              "total_ms": 30.837040991173126
+            }
+          }
+        },
+        "root_accuracy": {
+          "denominator": 20,
+          "numerator": 16,
+          "rate": 0.8
+        },
+        "unanswered_gaps": 34
+      },
+      "iteration": 0,
+      "learning_processed": 0,
+      "relationships_added": 0,
+      "sources_discovered": 0
+    },
+    {
+      "evaluation": {
+        "accuracy": {
+          "denominator": 20,
+          "numerator": 14,
+          "rate": 0.7
+        },
+        "correct_review": {
+          "denominator": 10,
+          "numerator": 10,
+          "rate": 1.0
+        },
+        "duration_seconds": 0.13638829199771862,
+        "false_approval": {
+          "denominator": 14,
+          "numerator": 0,
+          "rate": 0.0
+        },
+        "predictions": [
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          }
+        ],
+        "queries": {
+          "p50_ms": 1.2741659957100637,
+          "p95_ms": 1.6979579959297553,
+          "query_count": 100,
+          "query_shapes": {
+            "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+              "count": 20,
+              "total_ms": 23.23541700025089
+            },
+            "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 30,
+              "total_ms": 40.65337601059582
+            },
+            "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 30,
+              "total_ms": 39.777830977982376
+            },
+            "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+              "count": 20,
+              "total_ms": 31.07820697914576
+            }
+          }
+        },
+        "root_accuracy": {
+          "denominator": 20,
+          "numerator": 18,
+          "rate": 0.9
+        },
+        "unanswered_gaps": 26
+      },
+      "iteration": 1,
+      "learning_processed": 10,
+      "relationships_added": 4,
+      "sources_discovered": 3
+    },
+    {
+      "evaluation": {
+        "accuracy": {
+          "denominator": 20,
+          "numerator": 14,
+          "rate": 0.7
+        },
+        "correct_review": {
+          "denominator": 10,
+          "numerator": 10,
+          "rate": 1.0
+        },
+        "duration_seconds": 0.14702283299993724,
+        "false_approval": {
+          "denominator": 14,
+          "numerator": 0,
+          "rate": 0.0
+        },
+        "predictions": [
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 3,
+            "group": "contradiction",
+            "id": "held-06-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          }
+        ],
+        "queries": {
+          "p50_ms": 1.2821249983971938,
+          "p95_ms": 1.8833330032066442,
+          "query_count": 100,
+          "query_shapes": {
+            "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+              "count": 20,
+              "total_ms": 25.120289988990407
+            },
+            "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 30,
+              "total_ms": 44.7362909981166
+            },
+            "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 30,
+              "total_ms": 39.78208101761993
+            },
+            "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+              "count": 20,
+              "total_ms": 35.561624987167306
+            }
+          }
+        },
+        "root_accuracy": {
+          "denominator": 20,
+          "numerator": 18,
+          "rate": 0.9
+        },
+        "unanswered_gaps": 26
+      },
+      "iteration": 2,
+      "learning_processed": 20,
+      "relationships_added": 0,
+      "sources_discovered": 0
+    },
+    {
+      "evaluation": {
+        "accuracy": {
+          "denominator": 20,
+          "numerator": 16,
+          "rate": 0.8
+        },
+        "correct_review": {
+          "denominator": 10,
+          "numerator": 10,
+          "rate": 1.0
+        },
+        "duration_seconds": 0.14144745800149394,
+        "false_approval": {
+          "denominator": 14,
+          "numerator": 0,
+          "rate": 0.0
+        },
+        "predictions": [
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 1,
+            "group": "contradiction",
+            "id": "held-06-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 1,
+            "group": "contradiction",
+            "id": "held-06-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 1,
+            "group": "multi-hop",
+            "id": "held-08-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 2,
+            "group": "successful-scan",
+            "id": "held-09-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "passed/report"
+            ]
+          }
+        ],
+        "queries": {
+          "p50_ms": 1.2485000042943284,
+          "p95_ms": 1.697917003184557,
+          "query_count": 104,
+          "query_shapes": {
+            "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+              "count": 20,
+              "total_ms": 22.994250000920147
+            },
+            "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 32,
+              "total_ms": 43.457875995954964
+            },
+            "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 32,
+              "total_ms": 42.54495602071984
+            },
+            "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+              "count": 20,
+              "total_ms": 30.663122990517877
+            }
+          }
+        },
+        "root_accuracy": {
+          "denominator": 20,
+          "numerator": 18,
+          "rate": 0.9
+        },
+        "unanswered_gaps": 22
+      },
+      "iteration": 3,
+      "learning_processed": 30,
+      "relationships_added": 4,
+      "sources_discovered": 3
+    },
+    {
+      "evaluation": {
+        "accuracy": {
+          "denominator": 20,
+          "numerator": 20,
+          "rate": 1.0
+        },
+        "correct_review": {
+          "denominator": 10,
+          "numerator": 10,
+          "rate": 1.0
+        },
+        "duration_seconds": 0.161205999997037,
+        "false_approval": {
+          "denominator": 14,
+          "numerator": 0,
+          "rate": 0.0
+        },
+        "predictions": [
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "demo/ci"
+            ],
+            "gap_count": 1,
+            "group": "shared-origin",
+            "id": "held-00-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "demo/ci"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "independent/a",
+              "independent/b"
+            ],
+            "gap_count": 0,
+            "group": "independent",
+            "id": "held-01-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "independent/a",
+              "independent/b"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [
+              "missing/report"
+            ],
+            "gap_count": 2,
+            "group": "missing-scan",
+            "id": "held-02-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": [
+              "missing/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "unverified-root",
+            "id": "held-03-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "cycle",
+            "id": "held-04-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "stale",
+            "id": "held-05-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 1,
+            "group": "contradiction",
+            "id": "held-06-0",
+            "predicted": "BLOCK",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "BLOCK",
+            "expected_roots": [
+              "contradiction/report"
+            ],
+            "gap_count": 1,
+            "group": "contradiction",
+            "id": "held-06-1",
+            "predicted": "BLOCK",
+            "roots": [
+              "contradiction/report"
+            ]
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-0",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "REVIEW_REQUIRED",
+            "expected_roots": [],
+            "gap_count": 1,
+            "group": "missing-reference",
+            "id": "held-07-1",
+            "predicted": "REVIEW_REQUIRED",
+            "roots": []
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 0,
+            "group": "multi-hop",
+            "id": "held-08-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "multihop/c"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "multihop/c"
+            ],
+            "gap_count": 0,
+            "group": "multi-hop",
+            "id": "held-08-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "multihop/c"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 0,
+            "group": "successful-scan",
+            "id": "held-09-0",
+            "predicted": "APPROVE",
+            "roots": [
+              "passed/report"
+            ]
+          },
+          {
+            "expected": "APPROVE",
+            "expected_roots": [
+              "passed/report"
+            ],
+            "gap_count": 0,
+            "group": "successful-scan",
+            "id": "held-09-1",
+            "predicted": "APPROVE",
+            "roots": [
+              "passed/report"
+            ]
+          }
+        ],
+        "queries": {
+          "p50_ms": 1.3284579981700517,
+          "p95_ms": 1.9107920015812851,
+          "query_count": 112,
+          "query_shapes": {
+            "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+              "count": 20,
+              "total_ms": 24.43183497962309
+            },
+            "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 36,
+              "total_ms": 51.38037202414125
+            },
+            "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+              "count": 36,
+              "total_ms": 50.889832025859505
+            },
+            "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+              "count": 20,
+              "total_ms": 32.543541994527914
+            }
+          }
+        },
+        "root_accuracy": {
+          "denominator": 20,
+          "numerator": 20,
+          "rate": 1.0
+        },
+        "unanswered_gaps": 16
+      },
+      "iteration": 4,
+      "learning_processed": 40,
+      "relationships_added": 3,
+      "sources_discovered": 3
+    }
+  ],
+  "dataset_checksums": {
+    "artifacts/contradiction__fail.json": "f1549c6d0da58aef9e7347926f3298923e8b2b547a11edce553c738e462bd286",
+    "artifacts/contradiction__pass.json": "c415b73bd0c81919669f4f9792244357defd11a32717412e187376b678e7b260",
+    "artifacts/contradiction__report.json": "f5bdf85d6051e7327eaacd7a3e8a198b39ad99e285d975533de7259f67bda8a5",
+    "artifacts/cycle__a.json": "0699640da0d7b2eedad9689b8c54919657a935cbf49441084b0bfa3d49ab0c1b",
+    "artifacts/cycle__b.json": "164de13888fee1ea64c78d53fd202684192ae7d7973bab5deb84374f4a7be132",
+    "artifacts/demo__ci.json": "7d01289766a4653b0665809939efefa637406fbf8fb54c3d16a4ff90a2fb6d82",
+    "artifacts/demo__qa.json": "b132c32e7d625340143337a51c008ee48f36562fe8161015f2b95b61f6f24c53",
+    "artifacts/demo__scan.json": "7fb0a09e37b672d59a722dd5117e04c815f98aacbdc3e67670441e9f05f0e134",
+    "artifacts/demo__security-summary.json": "4b8f5a4a7b0564cbca24e34858e8816a7afdf56a820204b5f9da190a6a1699f7",
+    "artifacts/independent__a.json": "3149dfcaadb20c0248477ce2e58c35d016c3e942cece7a56498a3b480ce5eb0f",
+    "artifacts/independent__b.json": "dffe6237194edd5e8f41695889e5e69d4d33db37a43dc104e987a0db34289e39",
+    "artifacts/independent__scan.json": "2d5795df0fe38cf10b179ad31901479dfdf70a1c9b2d5b73b05f44f1c051f896",
+    "artifacts/missing__report.json": "2ea0c17344760e2a205608668feb195d7f895b1a5d3e52a90e85255507e75806",
+    "artifacts/missingref__report.json": "f2e4525c0f86e3fda7342b53a690ac5087f81f5584502bc682ceda7f05ec28f1",
+    "artifacts/multihop__a.json": "2a658b694732746e1aa021f4d0d190b1847cb3828d6439f8d613648634868ab4",
+    "artifacts/multihop__b.json": "bf485d4d3df3e52076118ce671ecb479b2c0271e382ca468207097085b3c01dd",
+    "artifacts/multihop__c.json": "db9a1792d65843e465d524fed19fa4f0a1862b92abf659e8d0a503374e27478a",
+    "artifacts/passed__report.json": "bfd1262cd5b289ddca27c80593e38192ee26ab5de19c537bfb387168cbe5f9aa",
+    "artifacts/passed__scan.json": "0451b3133927acb4cee088b395f8af1b06631cc8e208f024c7e97d600aca7b2b",
+    "artifacts/stale__report.json": "20add86dea66d38acc99a2d104fbf26b5600bfbb3cb97df7c258f51bbab3ccdf",
+    "artifacts/unknown__report.json": "8609b8756798137a14499327b2ec736a745b821af2cfe1ffa2dd6ce6aad151b0",
+    "gold.json": "cf80f3b310da5633bd9e3a9a8fc86ab43d310425188e94abcd6fe5b18a465231",
+    "heldout.json": "1568fa5d326ffb50a52f8f63f4a5243373bf07acc291c0e8880efea88459eb16",
+    "learning.json": "b2d72b85deb1d372343e6d541d448d39648e9b53717e0e781498606ec6092e9e"
+  },
+  "dataset_version": "hydrawitness-synthetic-v1",
+  "evaluation_time": "2026-11-14T12:00:00+00:00",
+  "flat": {
+    "accuracy": {
+      "denominator": 20,
+      "numerator": 6,
+      "rate": 0.3
+    },
+    "correct_review": {
+      "denominator": 10,
+      "numerator": 4,
+      "rate": 0.4
+    },
+    "duration_seconds": 0.05628462500317255,
+    "false_approval": {
+      "denominator": 14,
+      "numerator": 6,
+      "rate": 0.42857142857142855
+    },
+    "predictions": [
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "demo/ci"
+        ],
+        "gap_count": 0,
+        "group": "shared-origin",
+        "id": "held-00-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "demo/qa",
+          "demo/security-summary"
+        ]
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "demo/ci"
+        ],
+        "gap_count": 0,
+        "group": "shared-origin",
+        "id": "held-00-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "demo/qa",
+          "demo/security-summary"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "independent/a",
+          "independent/b"
+        ],
+        "gap_count": 0,
+        "group": "independent",
+        "id": "held-01-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "independent/a",
+          "independent/b"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "independent/a",
+          "independent/b"
+        ],
+        "gap_count": 0,
+        "group": "independent",
+        "id": "held-01-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "independent/a",
+          "independent/b"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "missing/report"
+        ],
+        "gap_count": 0,
+        "group": "missing-scan",
+        "id": "held-02-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "missing/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "missing/report"
+        ],
+        "gap_count": 0,
+        "group": "missing-scan",
+        "id": "held-02-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "missing/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "unverified-root",
+        "id": "held-03-0",
+        "predicted": "APPROVE",
+        "roots": [
+          "unknown/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "unverified-root",
+        "id": "held-03-1",
+        "predicted": "APPROVE",
+        "roots": [
+          "unknown/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "cycle",
+        "id": "held-04-0",
+        "predicted": "APPROVE",
+        "roots": [
+          "cycle/a"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "cycle",
+        "id": "held-04-1",
+        "predicted": "APPROVE",
+        "roots": [
+          "cycle/a"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "stale",
+        "id": "held-05-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "stale",
+        "id": "held-05-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "contradiction/report"
+        ],
+        "gap_count": 0,
+        "group": "contradiction",
+        "id": "held-06-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "contradiction/report"
+        ]
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "contradiction/report"
+        ],
+        "gap_count": 0,
+        "group": "contradiction",
+        "id": "held-06-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "contradiction/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "missing-reference",
+        "id": "held-07-0",
+        "predicted": "APPROVE",
+        "roots": [
+          "missingref/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 0,
+        "group": "missing-reference",
+        "id": "held-07-1",
+        "predicted": "APPROVE",
+        "roots": [
+          "missingref/report"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "multihop/c"
+        ],
+        "gap_count": 0,
+        "group": "multi-hop",
+        "id": "held-08-0",
+        "predicted": "APPROVE",
+        "roots": [
+          "multihop/a"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "multihop/c"
+        ],
+        "gap_count": 0,
+        "group": "multi-hop",
+        "id": "held-08-1",
+        "predicted": "APPROVE",
+        "roots": [
+          "multihop/a"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "passed/report"
+        ],
+        "gap_count": 0,
+        "group": "successful-scan",
+        "id": "held-09-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "passed/report"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "passed/report"
+        ],
+        "gap_count": 0,
+        "group": "successful-scan",
+        "id": "held-09-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "passed/report"
+        ]
+      }
+    ],
+    "queries": {
+      "p50_ms": 1.3884579966543242,
+      "p95_ms": 1.804041996365413,
+      "query_count": 40,
+      "query_shapes": {
+        "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+          "count": 20,
+          "total_ms": 23.801581999578048
+        },
+        "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+          "count": 20,
+          "total_ms": 31.607084994902834
+        }
+      }
+    },
+    "root_accuracy": {
+      "denominator": 20,
+      "numerator": 10,
+      "rate": 0.5
+    },
+    "unanswered_gaps": 0
+  },
+  "learning_batches": [
+    {
+      "duration_seconds": 0.47572629200294614,
+      "iteration": 1,
+      "queries": {
+        "p50_ms": 1.5467090051970445,
+        "p95_ms": 20.338750000519212,
+        "query_count": 145,
+        "query_shapes": {
+          "CREATE (n:Improvement {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 71.23141700139968
+          },
+          "CREATE (n:Source {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 60.12658300460316
+          },
+          "MATCH (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b}) RETURN b.id AS id": {
+            "count": 3,
+            "total_ms": 4.645041000912897
+          },
+          "MATCH (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 2,
+            "total_ms": 2.784000003885012
+          },
+          "MATCH (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 2,
+            "total_ms": 3.291626002464909
+          },
+          "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+            "count": 13,
+            "total_ms": 18.986665992997587
+          },
+          "MATCH (n:Improvement {id: $id}) RETURN n.payload AS payload": {
+            "count": 3,
+            "total_ms": 3.510458001983352
+          },
+          "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+            "count": 4,
+            "total_ms": 4.653376003261656
+          },
+          "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+            "count": 4,
+            "total_ms": 5.720541994378436
+          },
+          "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 44,
+            "total_ms": 67.66924699331867
+          },
+          "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 44,
+            "total_ms": 65.70808297692565
+          },
+          "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+            "count": 13,
+            "total_ms": 25.954875993193127
+          },
+          "MERGE (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b})": {
+            "count": 3,
+            "total_ms": 62.16816700180061
+          },
+          "MERGE (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b})": {
+            "count": 2,
+            "total_ms": 34.070959001837764
+          },
+          "MERGE (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b})": {
+            "count": 2,
+            "total_ms": 42.94333400321193
+          }
+        }
+      },
+      "question_ids": [
+        "learn-00-0",
+        "learn-00-1",
+        "learn-00-2",
+        "learn-00-3",
+        "learn-00-4",
+        "learn-01-0",
+        "learn-01-1",
+        "learn-01-2",
+        "learn-01-3",
+        "learn-01-4"
+      ],
+      "relationships_added": 4,
+      "sources_discovered": 3
+    },
+    {
+      "duration_seconds": 0.05813895799656166,
+      "iteration": 2,
+      "queries": {
+        "p50_ms": 1.2324579947744496,
+        "p95_ms": 1.538541000627447,
+        "query_count": 45,
+        "query_shapes": {
+          "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+            "count": 10,
+            "total_ms": 11.258542006544303
+          },
+          "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+            "count": 5,
+            "total_ms": 5.744083005993161
+          },
+          "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 10,
+            "total_ms": 12.945665010192897
+          },
+          "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 10,
+            "total_ms": 12.861915995017625
+          },
+          "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+            "count": 10,
+            "total_ms": 14.812749992415775
+          }
+        }
+      },
+      "question_ids": [
+        "learn-02-0",
+        "learn-02-1",
+        "learn-02-2",
+        "learn-02-3",
+        "learn-02-4",
+        "learn-03-0",
+        "learn-03-1",
+        "learn-03-2",
+        "learn-03-3",
+        "learn-03-4"
+      ],
+      "relationships_added": 0,
+      "sources_discovered": 0
+    },
+    {
+      "duration_seconds": 0.4028066669998225,
+      "iteration": 3,
+      "queries": {
+        "p50_ms": 1.446999995096121,
+        "p95_ms": 23.267292002856266,
+        "query_count": 95,
+        "query_shapes": {
+          "CREATE (n:Improvement {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 63.03475000459002
+          },
+          "CREATE (n:Source {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 71.68858300428838
+          },
+          "MATCH (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b}) RETURN b.id AS id": {
+            "count": 3,
+            "total_ms": 4.277500003809109
+          },
+          "MATCH (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 2,
+            "total_ms": 2.655917007359676
+          },
+          "MATCH (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 2,
+            "total_ms": 2.854667000065092
+          },
+          "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+            "count": 13,
+            "total_ms": 17.386168998200446
+          },
+          "MATCH (n:Improvement {id: $id}) RETURN n.payload AS payload": {
+            "count": 3,
+            "total_ms": 3.083208001044113
+          },
+          "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+            "count": 4,
+            "total_ms": 4.508291007368825
+          },
+          "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+            "count": 4,
+            "total_ms": 5.420208995928988
+          },
+          "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 19,
+            "total_ms": 28.295456992054824
+          },
+          "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 19,
+            "total_ms": 26.764247981191147
+          },
+          "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+            "count": 13,
+            "total_ms": 20.527127002424095
+          },
+          "MERGE (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b})": {
+            "count": 3,
+            "total_ms": 64.82050000340678
+          },
+          "MERGE (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b})": {
+            "count": 2,
+            "total_ms": 39.49383399594808
+          },
+          "MERGE (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b})": {
+            "count": 2,
+            "total_ms": 46.58858400216559
+          }
+        }
+      },
+      "question_ids": [
+        "learn-04-0",
+        "learn-04-1",
+        "learn-04-2",
+        "learn-04-3",
+        "learn-04-4",
+        "learn-06-0",
+        "learn-06-1",
+        "learn-06-2",
+        "learn-06-3",
+        "learn-06-4"
+      ],
+      "relationships_added": 4,
+      "sources_discovered": 3
+    },
+    {
+      "duration_seconds": 0.3995800409975345,
+      "iteration": 4,
+      "queries": {
+        "p50_ms": 1.5208749973680824,
+        "p95_ms": 21.731958993768785,
+        "query_count": 101,
+        "query_shapes": {
+          "CREATE (n:Improvement {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 69.71445900853723
+          },
+          "CREATE (n:Source {id: $id, payload: $payload})": {
+            "count": 3,
+            "total_ms": 67.80137500027195
+          },
+          "MATCH (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b}) RETURN b.id AS id": {
+            "count": 3,
+            "total_ms": 4.290040997148026
+          },
+          "MATCH (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 2,
+            "total_ms": 3.0242919965530746
+          },
+          "MATCH (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b}) RETURN b.id AS id": {
+            "count": 1,
+            "total_ms": 1.2926249983138405
+          },
+          "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+            "count": 13,
+            "total_ms": 17.834331978519913
+          },
+          "MATCH (n:Improvement {id: $id}) RETURN n.payload AS payload": {
+            "count": 3,
+            "total_ms": 3.5646670003188774
+          },
+          "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+            "count": 3,
+            "total_ms": 3.4889580128947273
+          },
+          "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+            "count": 3,
+            "total_ms": 3.931083010684233
+          },
+          "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 24,
+            "total_ms": 38.257375003013294
+          },
+          "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+            "count": 24,
+            "total_ms": 35.806834981485736
+          },
+          "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+            "count": 13,
+            "total_ms": 22.05958400008967
+          },
+          "MERGE (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b})": {
+            "count": 3,
+            "total_ms": 65.31279299088055
+          },
+          "MERGE (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b})": {
+            "count": 2,
+            "total_ms": 41.059333001612686
+          },
+          "MERGE (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b})": {
+            "count": 1,
+            "total_ms": 20.634041000448633
+          }
+        }
+      },
+      "question_ids": [
+        "learn-08-0",
+        "learn-08-1",
+        "learn-08-2",
+        "learn-08-3",
+        "learn-08-4",
+        "learn-09-0",
+        "learn-09-1",
+        "learn-09-2",
+        "learn-09-3",
+        "learn-09-4"
+      ],
+      "relationships_added": 3,
+      "sources_discovered": 3
+    }
+  ],
+  "ordering_seed": 0,
+  "scope": "benchmark-7fdb8301291f40e0bb6f4da6c84bc3ce",
+  "seed_stats": {
+    "p50_ms": 1.699790998827666,
+    "p95_ms": 31.260000003385358,
+    "query_count": 354,
+    "query_shapes": {
+      "CREATE (n:Claim {id: $id, payload: $payload})": {
+        "count": 60,
+        "total_ms": 1447.4834169668611
+      },
+      "CREATE (n:Source {id: $id, payload: $payload})": {
+        "count": 12,
+        "total_ms": 295.1741669821786
+      },
+      "MATCH (a:Source {id: $a})-[:SUPPORTS]->(b:Claim {id: $b}) RETURN b.id AS id": {
+        "count": 74,
+        "total_ms": 106.08949704328552
+      },
+      "MATCH (n:Claim {id: $id}) RETURN n.payload AS payload": {
+        "count": 60,
+        "total_ms": 104.67183398577617
+      },
+      "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+        "count": 74,
+        "total_ms": 114.73091000516433
+      },
+      "MERGE (a:Source {id: $a})-[:SUPPORTS]->(b:Claim {id: $b})": {
+        "count": 74,
+        "total_ms": 1638.0920020092162
+      }
+    }
+  },
+  "static": {
+    "accuracy": {
+      "denominator": 20,
+      "numerator": 10,
+      "rate": 0.5
+    },
+    "correct_review": {
+      "denominator": 10,
+      "numerator": 10,
+      "rate": 1.0
+    },
+    "duration_seconds": 0.11525049999909243,
+    "false_approval": {
+      "denominator": 14,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "predictions": [
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "demo/ci"
+        ],
+        "gap_count": 3,
+        "group": "shared-origin",
+        "id": "held-00-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "demo/ci"
+        ],
+        "gap_count": 3,
+        "group": "shared-origin",
+        "id": "held-00-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "independent/a",
+          "independent/b"
+        ],
+        "gap_count": 2,
+        "group": "independent",
+        "id": "held-01-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "independent/a",
+          "independent/b"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "independent/a",
+          "independent/b"
+        ],
+        "gap_count": 2,
+        "group": "independent",
+        "id": "held-01-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "independent/a",
+          "independent/b"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "missing/report"
+        ],
+        "gap_count": 2,
+        "group": "missing-scan",
+        "id": "held-02-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "missing/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "missing/report"
+        ],
+        "gap_count": 2,
+        "group": "missing-scan",
+        "id": "held-02-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "missing/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "unverified-root",
+        "id": "held-03-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "unverified-root",
+        "id": "held-03-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "cycle",
+        "id": "held-04-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "cycle",
+        "id": "held-04-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "stale",
+        "id": "held-05-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "stale",
+        "id": "held-05-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "contradiction/report"
+        ],
+        "gap_count": 3,
+        "group": "contradiction",
+        "id": "held-06-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "contradiction/report"
+        ]
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "contradiction/report"
+        ],
+        "gap_count": 3,
+        "group": "contradiction",
+        "id": "held-06-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "contradiction/report"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "missing-reference",
+        "id": "held-07-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "missing-reference",
+        "id": "held-07-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "multihop/c"
+        ],
+        "gap_count": 1,
+        "group": "multi-hop",
+        "id": "held-08-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "multihop/c"
+        ],
+        "gap_count": 1,
+        "group": "multi-hop",
+        "id": "held-08-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "passed/report"
+        ],
+        "gap_count": 2,
+        "group": "successful-scan",
+        "id": "held-09-0",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "passed/report"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "passed/report"
+        ],
+        "gap_count": 2,
+        "group": "successful-scan",
+        "id": "held-09-1",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "passed/report"
+        ]
+      }
+    ],
+    "queries": {
+      "p50_ms": 1.2524999983725138,
+      "p95_ms": 1.655708001635503,
+      "query_count": 88,
+      "query_shapes": {
+        "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+          "count": 20,
+          "total_ms": 23.550791993329767
+        },
+        "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 24,
+          "total_ms": 30.033664988877717
+        },
+        "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 24,
+          "total_ms": 29.42854201683076
+        },
+        "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+          "count": 20,
+          "total_ms": 30.837040991173126
+        }
+      }
+    },
+    "root_accuracy": {
+      "denominator": 20,
+      "numerator": 16,
+      "rate": 0.8
+    },
+    "unanswered_gaps": 34
+  },
+  "total_duration_seconds": 5.805670375004411
+}

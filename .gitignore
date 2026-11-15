@@ -1,0 +1,14 @@
+.hydradb/
+__pycache__/
+.venv/
+
+demo/runs/
+.DS_Store
+demo/recording/
+demo/*.mp4
+demo/**/*.aiff
+demo/final_cut/*
+!demo/final_cut/build.py
+demo/recut/*
+!demo/recut/build.py
+.codex/

@@ -1,0 +1,14 @@
+{
+  "content": "Manually authored test artifact for partial/top",
+  "external_id": "partial/top",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [
+    "partial/root",
+    "partial/not-published"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "Synthetic operational evidence: partial/top",
+  "type": "report"
+}

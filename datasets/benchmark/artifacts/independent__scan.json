@@ -1,0 +1,12 @@
+{
+  "content": "Synthetic engineering evidence for independent/scan. Required security scan completed successfully.",
+  "external_id": "independent/scan",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-ci",
+  "outcome": "passed",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "independent/scan: security scan result",
+  "type": "security_scan"
+}

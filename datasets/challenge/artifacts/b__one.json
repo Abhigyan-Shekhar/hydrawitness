@@ -1,0 +1,11 @@
+{
+  "content": "Manually authored test artifact for b/one",
+  "external_id": "b/one",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "Synthetic operational evidence: b/one",
+  "type": "report"
+}

@@ -1,0 +1,12 @@
+{
+  "content": "Synthetic engineering evidence for demo/scan. Required security scan did not run.",
+  "external_id": "demo/scan",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-ci",
+  "outcome": "skipped",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "demo/scan: security scan result",
+  "type": "security_scan"
+}

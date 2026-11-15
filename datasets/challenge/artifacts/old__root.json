@@ -1,0 +1,11 @@
+{
+  "content": "Manually authored test artifact for old/root",
+  "external_id": "old/root",
+  "observed_at": "2020-01-01T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [],
+  "required": [],
+  "root_verified": true,
+  "title": "Synthetic operational evidence: old/root",
+  "type": "report"
+}

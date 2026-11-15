@@ -1,0 +1,11 @@
+{
+  "external_id": "cycle/a",
+  "type": "report",
+  "references": [
+    "cycle/b"
+  ],
+  "required": [],
+  "root_verified": false,
+  "observed_at": "2026-11-14T00:00:00Z",
+  "content": "Synthetic artifact cycle/a"
+}

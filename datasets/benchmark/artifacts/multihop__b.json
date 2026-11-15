@@ -1,0 +1,13 @@
+{
+  "content": "Synthetic engineering evidence for multihop/b. Release readiness observation; see recorded references.",
+  "external_id": "multihop/b",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [
+    "multihop/c"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "multihop/b: engineering readiness report",
+  "type": "report"
+}

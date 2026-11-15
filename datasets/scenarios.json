@@ -1,0 +1,110 @@
+[
+  {
+    "id": "shared-origin",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ],
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "expected": "BLOCK"
+  },
+  {
+    "id": "independent",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ],
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "expected": "APPROVE"
+  },
+  {
+    "id": "missing-scan",
+    "sources": [
+      "missing/report"
+    ],
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "expected": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "unverified-root",
+    "sources": [
+      "unknown/report"
+    ],
+    "policy": {
+      "id": "basic"
+    },
+    "expected": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "cycle",
+    "sources": [
+      "cycle/a"
+    ],
+    "policy": {
+      "id": "basic"
+    },
+    "expected": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "stale",
+    "sources": [
+      "stale/report"
+    ],
+    "policy": {
+      "id": "basic"
+    },
+    "expected": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "contradiction",
+    "sources": [
+      "contradiction/report"
+    ],
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "expected": "BLOCK"
+  },
+  {
+    "id": "missing-reference",
+    "sources": [
+      "missingref/report"
+    ],
+    "policy": {
+      "id": "basic"
+    },
+    "expected": "REVIEW_REQUIRED"
+  },
+  {
+    "id": "multi-hop",
+    "sources": [
+      "multihop/a"
+    ],
+    "policy": {
+      "id": "basic"
+    },
+    "expected": "APPROVE"
+  },
+  {
+    "id": "successful-scan",
+    "sources": [
+      "passed/report"
+    ],
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "expected": "APPROVE"
+  }
+]

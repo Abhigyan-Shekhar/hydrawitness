@@ -1,0 +1,513 @@
+{
+  "dataset_checksums": {
+    "artifacts/aged__root.json": "22cecfc04e7ed2ed67c8854ff7e56a7f5d8ffe3dc17a74a6b7a0b55ae5f63190",
+    "artifacts/aged__scan.json": "6f8edaa9a0cd9388925d6a9db5af3bd142238bacb3addab6647d009e447fd965",
+    "artifacts/b__one.json": "b8d0e66120faec61d38032c3479b5c639dc99bbbe11956e28388a794181e621c",
+    "artifacts/b__top.json": "12499cff0477dc807364a19fb2410b24a20672d3a537f459767ea470a553a59a",
+    "artifacts/b__two.json": "9c5388ecbc6c2bf97d6073a87286ceef5388761843a271bcd0bed2f1b17ada4e",
+    "artifacts/d__left.json": "c6925acfd825fff29ab4dbeb2f5cbaeea12b6d12ee26faa9af4e595d324b5d80",
+    "artifacts/d__right.json": "1e45ee24e1e775e68d19b413f88cef033bac2939a2accdba65c3a07292bd28ea",
+    "artifacts/d__root.json": "fd01c3af2d19b9354a4f25933c89d029fe5e7343a9e90bae2d7573db80006f86",
+    "artifacts/d__top.json": "c79ff5a2d89f410c1f3a96d6f3317ede412ff33904189cb7528c1559e3120772",
+    "artifacts/dual__root.json": "b1c3cc227d9b41d9e10499f9a2308b9401c8b12090e7bc20685a9aa3e15c164d",
+    "artifacts/dual__scan1.json": "22add141f211280c3cdf23f3c2f9daeac5eb1264dd6bacff8b9fa75b04f237dd",
+    "artifacts/dual__scan2.json": "ba30aeff16494a266a47941f5d91e9c36824bf1d4a7cd07c1a48254119040242",
+    "artifacts/old__root.json": "b4fbc08da92a71eb4bb352b56ab5c18ad333e606389fa7279b334d48b4de84d8",
+    "artifacts/old__top.json": "dc407b2702763187f0459137ce36dc36951f9cd6d1f16217c3d7030d10c25707",
+    "artifacts/opt__root.json": "8379042328439e7809362d8926db70ef30a68ffecbc6a871058d39cb24822ed5",
+    "artifacts/opt__scan.json": "eb93c274e3af6bf9f43a42e6643cfc74d692ca604d0b076160369ce78ceed5b1",
+    "artifacts/partial__root.json": "ed8a30f2eadf53d8cbf96dcbc0a2a784971c8b818a28a039a1f00f19c45cad5c",
+    "artifacts/partial__top.json": "b5bfda69f6c8c084ecf7681eb4dc082964c235a094f41ef4ef332dee14c834b7",
+    "artifacts/ring__a.json": "b2bbb3d6127a36b9d13e8b8a913d22a26bf0adedab638a1629352afaf2854658",
+    "artifacts/ring__b.json": "212345ddbcaf16b2137fe0921cc1b925b720f89431f5eb70659a9003c4c4b88d",
+    "artifacts/ring__c.json": "c74e790dfd582d0d369f75554b2b437ad58a1fbe49b65c6d765f42356bd956e9",
+    "artifacts/ring__root.json": "66070d0e4224f4d4021f7f07b2e1dfb889bb046be8a3c5527d4472de69e627de",
+    "artifacts/split__broken.json": "4c653d6cdbdb5d933440b5ab5f1c43170302faa4ff6d7d847fdad96c4e5f4e9b",
+    "artifacts/split__ok.json": "02a6af200b509e7270070a80d3d5784436744d13fb10f1cdc85a9e7b5a2e1d3d",
+    "artifacts/tri__a.json": "6f937223a56853a9fab315db7339e13ef7a4f7788f3438db0fe32bdbcaa2f0fb",
+    "artifacts/tri__b.json": "723f7b78f0d7f965e2546475d506bd1a67fe30b412824d3ef91a13b49835f211",
+    "artifacts/tri__c.json": "9337545c058323b77ba5434b30596fd0c7d34070e0b985df4a45f36c8adfa01c",
+    "artifacts/tri__mid.json": "9ca80480ea48092bf78c0062d906c3b9d1f0efc06e43b6745cd83e041b70c826",
+    "artifacts/tri__top.json": "5e8ccbc097fa991764afdb2048264a9fb797a1300709d6718949ba3539984772",
+    "gold.json": "452cb4b42c2eb1726a166f1c2c9283b9c6c999c2e9b7148854920d249a9f1ad2",
+    "questions.json": "cde2e11b84055d38f1b4ec6c59ddb408f9b4bba1c792355a9c3eeee5d41dd5e2"
+  },
+  "dataset_version": "manual-topology-challenge-v1",
+  "final": {
+    "accuracy": {
+      "denominator": 10,
+      "numerator": 10,
+      "rate": 1.0
+    },
+    "correct_review": {
+      "denominator": 7,
+      "numerator": 7,
+      "rate": 1.0
+    },
+    "duration_seconds": 0.0933267500004149,
+    "false_approval": {
+      "denominator": 8,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "predictions": [
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "d/root"
+        ],
+        "gap_count": 0,
+        "group": "diamond",
+        "id": "diamond",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "d/root"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "b/one",
+          "b/two"
+        ],
+        "gap_count": 0,
+        "group": "two-origin-branch",
+        "id": "two-origin-branch",
+        "predicted": "APPROVE",
+        "roots": [
+          "b/one",
+          "b/two"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "partial-branch",
+        "id": "partial-branch",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "cycle-with-branch",
+        "id": "cycle-with-branch",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "stale-upstream",
+        "id": "stale-upstream",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "aged/root"
+        ],
+        "gap_count": 2,
+        "group": "stale-scan",
+        "id": "stale-scan",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "aged/root"
+        ]
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "dual/root"
+        ],
+        "gap_count": 1,
+        "group": "conflicting-checks",
+        "id": "conflicting-checks",
+        "predicted": "BLOCK",
+        "roots": [
+          "dual/root"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "opt/root"
+        ],
+        "gap_count": 1,
+        "group": "optional-failed",
+        "id": "optional-failed",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "opt/root"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "tri/a",
+          "tri/b",
+          "tri/c"
+        ],
+        "gap_count": 0,
+        "group": "three-origins",
+        "id": "three-origins",
+        "predicted": "APPROVE",
+        "roots": [
+          "tri/a",
+          "tri/b",
+          "tri/c"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "split/ok"
+        ],
+        "gap_count": 1,
+        "group": "separate-incomplete-support",
+        "id": "separate-incomplete-support",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "split/ok"
+        ]
+      }
+    ],
+    "queries": {
+      "p50_ms": 1.2462909944588318,
+      "p95_ms": 1.6672080018906854,
+      "query_count": 72,
+      "query_shapes": {
+        "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+          "count": 10,
+          "total_ms": 11.811375014076475
+        },
+        "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 26,
+          "total_ms": 34.331625000049826
+        },
+        "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 26,
+          "total_ms": 31.5386260044761
+        },
+        "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+          "count": 10,
+          "total_ms": 14.338208005938213
+        }
+      }
+    },
+    "root_accuracy": {
+      "denominator": 10,
+      "numerator": 10,
+      "rate": 1.0
+    },
+    "unanswered_gaps": 8
+  },
+  "initial": {
+    "accuracy": {
+      "denominator": 10,
+      "numerator": 7,
+      "rate": 0.7
+    },
+    "correct_review": {
+      "denominator": 7,
+      "numerator": 7,
+      "rate": 1.0
+    },
+    "duration_seconds": 0.057439834003162105,
+    "false_approval": {
+      "denominator": 8,
+      "numerator": 0,
+      "rate": 0.0
+    },
+    "predictions": [
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "d/root"
+        ],
+        "gap_count": 2,
+        "group": "diamond",
+        "id": "diamond",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "b/one",
+          "b/two"
+        ],
+        "gap_count": 2,
+        "group": "two-origin-branch",
+        "id": "two-origin-branch",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 2,
+        "group": "partial-branch",
+        "id": "partial-branch",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 2,
+        "group": "cycle-with-branch",
+        "id": "cycle-with-branch",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [],
+        "gap_count": 1,
+        "group": "stale-upstream",
+        "id": "stale-upstream",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "aged/root"
+        ],
+        "gap_count": 2,
+        "group": "stale-scan",
+        "id": "stale-scan",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "aged/root"
+        ]
+      },
+      {
+        "expected": "BLOCK",
+        "expected_roots": [
+          "dual/root"
+        ],
+        "gap_count": 3,
+        "group": "conflicting-checks",
+        "id": "conflicting-checks",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "dual/root"
+        ]
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "opt/root"
+        ],
+        "gap_count": 1,
+        "group": "optional-failed",
+        "id": "optional-failed",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "opt/root"
+        ]
+      },
+      {
+        "expected": "APPROVE",
+        "expected_roots": [
+          "tri/a",
+          "tri/b",
+          "tri/c"
+        ],
+        "gap_count": 2,
+        "group": "three-origins",
+        "id": "three-origins",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": []
+      },
+      {
+        "expected": "REVIEW_REQUIRED",
+        "expected_roots": [
+          "split/ok"
+        ],
+        "gap_count": 1,
+        "group": "separate-incomplete-support",
+        "id": "separate-incomplete-support",
+        "predicted": "REVIEW_REQUIRED",
+        "roots": [
+          "split/ok"
+        ]
+      }
+    ],
+    "queries": {
+      "p50_ms": 1.244749997567851,
+      "p95_ms": 1.8384169961791486,
+      "query_count": 42,
+      "query_shapes": {
+        "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+          "count": 10,
+          "total_ms": 13.80454200989334
+        },
+        "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 11,
+          "total_ms": 13.799836990074255
+        },
+        "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+          "count": 11,
+          "total_ms": 12.950875985552557
+        },
+        "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+          "count": 10,
+          "total_ms": 15.573208991554566
+        }
+      }
+    },
+    "root_accuracy": {
+      "denominator": 10,
+      "numerator": 7,
+      "rate": 0.7
+    },
+    "unanswered_gaps": 18
+  },
+  "learning": [
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 4,
+      "id": "diamond",
+      "sources": 3
+    },
+    {
+      "after": "APPROVE",
+      "before": "REVIEW_REQUIRED",
+      "edges": 2,
+      "id": "two-origin-branch",
+      "sources": 2
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 1,
+      "id": "partial-branch",
+      "sources": 1
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 4,
+      "id": "cycle-with-branch",
+      "sources": 3
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 1,
+      "id": "stale-upstream",
+      "sources": 1
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 1,
+      "id": "stale-scan",
+      "sources": 1
+    },
+    {
+      "after": "BLOCK",
+      "before": "REVIEW_REQUIRED",
+      "edges": 2,
+      "id": "conflicting-checks",
+      "sources": 2
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 1,
+      "id": "optional-failed",
+      "sources": 1
+    },
+    {
+      "after": "APPROVE",
+      "before": "REVIEW_REQUIRED",
+      "edges": 4,
+      "id": "three-origins",
+      "sources": 4
+    },
+    {
+      "after": "REVIEW_REQUIRED",
+      "before": "REVIEW_REQUIRED",
+      "edges": 0,
+      "id": "separate-incomplete-support",
+      "sources": 0
+    }
+  ],
+  "learning_queries": {
+    "p50_ms": 1.4358330008690245,
+    "p95_ms": 23.86908300104551,
+    "query_count": 295,
+    "query_shapes": {
+      "CREATE (n:Improvement {id: $id, payload: $payload})": {
+        "count": 13,
+        "total_ms": 263.29370900202775
+      },
+      "CREATE (n:Source {id: $id, payload: $payload})": {
+        "count": 18,
+        "total_ms": 397.2480850061402
+      },
+      "MATCH (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b}) RETURN b.id AS id": {
+        "count": 13,
+        "total_ms": 20.204124004521873
+      },
+      "MATCH (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b}) RETURN b.id AS id": {
+        "count": 16,
+        "total_ms": 25.24154200364137
+      },
+      "MATCH (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b}) RETURN b.id AS id": {
+        "count": 4,
+        "total_ms": 5.82229199790163
+      },
+      "MATCH (c:Claim {id: $id}) RETURN c.id AS id": {
+        "count": 23,
+        "total_ms": 36.11587602063082
+      },
+      "MATCH (n:Improvement {id: $id}) RETURN n.payload AS payload": {
+        "count": 13,
+        "total_ms": 14.400084990484174
+      },
+      "MATCH (n:Source {id: $id}) RETURN n.payload AS payload": {
+        "count": 20,
+        "total_ms": 24.798582977382466
+      },
+      "MATCH (s:Source {id: $id}) RETURN s.payload AS payload": {
+        "count": 23,
+        "total_ms": 35.09900099015795
+      },
+      "MATCH (s:Source {id: $id})-[:DERIVED_FROM]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+        "count": 48,
+        "total_ms": 63.117999030509964
+      },
+      "MATCH (s:Source {id: $id})-[:REQUIRES]->(p:Source) RETURN DISTINCT p.payload AS payload": {
+        "count": 48,
+        "total_ms": 57.1727950591594
+      },
+      "MATCH (s:Source)-[:SUPPORTS]->(c:Claim {id: $id}) RETURN DISTINCT s.payload AS payload": {
+        "count": 23,
+        "total_ms": 35.50095998798497
+      },
+      "MERGE (a:Improvement {id: $a})-[:FOR_CLAIM]->(b:Claim {id: $b})": {
+        "count": 13,
+        "total_ms": 286.76521001034416
+      },
+      "MERGE (a:Source {id: $a})-[:DERIVED_FROM]->(b:Source {id: $b})": {
+        "count": 16,
+        "total_ms": 353.36058299435535
+      },
+      "MERGE (a:Source {id: $a})-[:REQUIRES]->(b:Source {id: $b})": {
+        "count": 4,
+        "total_ms": 93.74383399699582
+      }
+    }
+  },
+  "scope": "challenge-1d0d5fe88c4b4b02b302dacb5478c65b"
+}

@@ -1,0 +1,4 @@
+{
+  "release-v1": {"id":"release-v1", "require_security_scan":true, "min_roots":1, "max_age_days":365},
+  "two-independent-v1": {"id":"two-independent-v1", "require_security_scan":true, "min_roots":2, "max_age_days":365}
+}

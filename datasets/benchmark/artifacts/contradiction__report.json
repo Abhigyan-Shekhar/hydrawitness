@@ -1,0 +1,14 @@
+{
+  "content": "Synthetic engineering evidence for contradiction/report. Release readiness observation; see recorded references.",
+  "external_id": "contradiction/report",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [],
+  "required": [
+    "contradiction/pass",
+    "contradiction/fail"
+  ],
+  "root_verified": true,
+  "title": "contradiction/report: engineering readiness report",
+  "type": "report"
+}

@@ -1,0 +1,14 @@
+{
+  "content": "Manually authored test artifact for tri/top",
+  "external_id": "tri/top",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [
+    "tri/a",
+    "tri/mid"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "Synthetic operational evidence: tri/top",
+  "type": "report"
+}

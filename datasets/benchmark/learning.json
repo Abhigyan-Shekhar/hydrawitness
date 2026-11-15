@@ -1,0 +1,482 @@
+[
+  {
+    "group": "shared-origin",
+    "id": "learn-00-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the security evidence show for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "shared-origin",
+    "id": "learn-00-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the release verification show for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "shared-origin",
+    "id": "learn-00-2",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the QA lineage show for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "shared-origin",
+    "id": "learn-00-3",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the deployment checks show for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "shared-origin",
+    "id": "learn-00-4",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the readiness evidence show for checkout deployment?",
+    "sources": [
+      "demo/qa",
+      "demo/security-summary"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "learn-01-0",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What does the security evidence show for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "learn-01-1",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What does the release verification show for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "learn-01-2",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What does the QA lineage show for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "learn-01-3",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What does the deployment checks show for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "independent",
+    "id": "learn-01-4",
+    "policy": {
+      "id": "independent",
+      "min_roots": 2,
+      "require_security_scan": true
+    },
+    "question": "What does the readiness evidence show for payments release?",
+    "sources": [
+      "independent/a",
+      "independent/b"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "learn-02-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the security evidence show for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "learn-02-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the release verification show for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "learn-02-2",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the QA lineage show for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "learn-02-3",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the deployment checks show for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "missing-scan",
+    "id": "learn-02-4",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the readiness evidence show for identity rollout?",
+    "sources": [
+      "missing/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "learn-03-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the security evidence show for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "learn-03-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the release verification show for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "learn-03-2",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the QA lineage show for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "learn-03-3",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the deployment checks show for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "unverified-root",
+    "id": "learn-03-4",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the readiness evidence show for catalog approval?",
+    "sources": [
+      "unknown/report"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "learn-04-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the security evidence show for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "learn-04-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the release verification show for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "learn-04-2",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the QA lineage show for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "learn-04-3",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the deployment checks show for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "cycle",
+    "id": "learn-04-4",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the readiness evidence show for gateway review?",
+    "sources": [
+      "cycle/a"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "learn-06-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the security evidence show for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "learn-06-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the release verification show for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "learn-06-2",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the QA lineage show for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "learn-06-3",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the deployment checks show for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "contradiction",
+    "id": "learn-06-4",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the readiness evidence show for service security review?",
+    "sources": [
+      "contradiction/report"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "learn-08-0",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the security evidence show for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "learn-08-1",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the release verification show for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "learn-08-2",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the QA lineage show for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "learn-08-3",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the deployment checks show for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "multi-hop",
+    "id": "learn-08-4",
+    "policy": {
+      "id": "basic"
+    },
+    "question": "What does the readiness evidence show for inventory rollout?",
+    "sources": [
+      "multihop/a"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "learn-09-0",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the security evidence show for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "learn-09-1",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the release verification show for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "learn-09-2",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the QA lineage show for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "learn-09-3",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the deployment checks show for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  },
+  {
+    "group": "successful-scan",
+    "id": "learn-09-4",
+    "policy": {
+      "id": "release",
+      "require_security_scan": true
+    },
+    "question": "What does the readiness evidence show for analytics release?",
+    "sources": [
+      "passed/report"
+    ]
+  }
+]

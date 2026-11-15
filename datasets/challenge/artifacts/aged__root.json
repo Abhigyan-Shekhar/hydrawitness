@@ -1,0 +1,13 @@
+{
+  "content": "Manually authored test artifact for aged/root",
+  "external_id": "aged/root",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [],
+  "required": [
+    "aged/scan"
+  ],
+  "root_verified": true,
+  "title": "Synthetic operational evidence: aged/root",
+  "type": "report"
+}

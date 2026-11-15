@@ -1,0 +1,11 @@
+{
+  "external_id": "passed/report",
+  "type": "report",
+  "references": [],
+  "required": [
+    "passed/scan"
+  ],
+  "root_verified": true,
+  "observed_at": "2026-11-14T00:00:00Z",
+  "content": "Synthetic artifact passed/report"
+}

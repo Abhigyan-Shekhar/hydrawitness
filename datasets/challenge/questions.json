@@ -1,0 +1,143 @@
+[
+  {
+    "group": "diamond",
+    "id": "diamond",
+    "policy": {
+      "id": "two-roots",
+      "max_age_days": 365,
+      "min_roots": 2,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for diamond?",
+    "sources": [
+      "d/top"
+    ]
+  },
+  {
+    "group": "two-origin-branch",
+    "id": "two-origin-branch",
+    "policy": {
+      "id": "two-roots",
+      "max_age_days": 365,
+      "min_roots": 2,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for two-origin-branch?",
+    "sources": [
+      "b/top"
+    ]
+  },
+  {
+    "group": "partial-branch",
+    "id": "partial-branch",
+    "policy": {
+      "id": "one-root",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for partial-branch?",
+    "sources": [
+      "partial/top"
+    ]
+  },
+  {
+    "group": "cycle-with-branch",
+    "id": "cycle-with-branch",
+    "policy": {
+      "id": "one-root",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for cycle-with-branch?",
+    "sources": [
+      "ring/a"
+    ]
+  },
+  {
+    "group": "stale-upstream",
+    "id": "stale-upstream",
+    "policy": {
+      "id": "one-root",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for stale-upstream?",
+    "sources": [
+      "old/top"
+    ]
+  },
+  {
+    "group": "stale-scan",
+    "id": "stale-scan",
+    "policy": {
+      "id": "release",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": true
+    },
+    "question": "Can the release review proceed for stale-scan?",
+    "sources": [
+      "aged/root"
+    ]
+  },
+  {
+    "group": "conflicting-checks",
+    "id": "conflicting-checks",
+    "policy": {
+      "id": "release",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": true
+    },
+    "question": "Can the release review proceed for conflicting-checks?",
+    "sources": [
+      "dual/root"
+    ]
+  },
+  {
+    "group": "optional-failed",
+    "id": "optional-failed",
+    "policy": {
+      "id": "basic",
+      "max_age_days": 365,
+      "min_roots": 1,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for optional-failed?",
+    "sources": [
+      "opt/root"
+    ]
+  },
+  {
+    "group": "three-origins",
+    "id": "three-origins",
+    "policy": {
+      "id": "three-roots",
+      "max_age_days": 365,
+      "min_roots": 3,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for three-origins?",
+    "sources": [
+      "tri/top"
+    ]
+  },
+  {
+    "group": "separate-incomplete-support",
+    "id": "separate-incomplete-support",
+    "policy": {
+      "id": "two-roots",
+      "max_age_days": 365,
+      "min_roots": 2,
+      "require_security_scan": false
+    },
+    "question": "Can the release review proceed for separate-incomplete-support?",
+    "sources": [
+      "split/ok",
+      "split/broken"
+    ]
+  }
+]

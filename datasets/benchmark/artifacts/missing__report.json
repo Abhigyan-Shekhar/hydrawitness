@@ -1,0 +1,13 @@
+{
+  "content": "Synthetic engineering evidence for missing/report. Release readiness observation; see recorded references.",
+  "external_id": "missing/report",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "synthetic-engineering",
+  "references": [],
+  "required": [
+    "missing/absent-scan"
+  ],
+  "root_verified": true,
+  "title": "missing/report: engineering readiness report",
+  "type": "report"
+}

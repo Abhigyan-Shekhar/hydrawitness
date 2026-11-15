@@ -1,0 +1,14 @@
+{
+  "content": "Manually authored test artifact for tri/mid",
+  "external_id": "tri/mid",
+  "observed_at": "2026-11-14T00:00:00Z",
+  "origin_system": "challenge-fixture",
+  "references": [
+    "tri/b",
+    "tri/c"
+  ],
+  "required": [],
+  "root_verified": false,
+  "title": "Synthetic operational evidence: tri/mid",
+  "type": "report"
+}
