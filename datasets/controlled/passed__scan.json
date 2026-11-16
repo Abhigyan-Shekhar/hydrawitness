@@ -6,5 +6,6 @@
   "root_verified": true,
   "observed_at": "2026-11-14T00:00:00Z",
   "content": "Synthetic artifact passed/scan",
-  "outcome": "passed"
+  "outcome": "passed",
+  "subject": {"kind": "git_commit", "value": "2939bbaef9aba3b4af0fb767d41053b1249e366d"}
 }

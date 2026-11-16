@@ -1,6 +1,8 @@
 # Evaluation protocol — synthetic v1
 
-Run `python3 -m evals.run` with the local HydraDB container available. A second deterministic ordering can be reproduced with `python3 -m evals.run --seed 1 --output-dir evals/results-order-1`. These commands write new, randomly scoped nodes to the existing database; they do not delete prior data. Repeated runs accumulate data. Ensure sufficient disk space. Output files are overwritten only within the chosen output directory. HydraDB errors, incomplete pages, split failures and checksum mismatches cause a nonzero exit.
+Use revision `6383373` to reproduce the historical decision policy described here. The frozen fixtures omit release identities. The current engine sends unbound mandatory scans to review, so its results can differ from these historical labels and measurements.
+
+Run `python3 -m evals.run --output-dir /tmp/hydrawitness-eval` with the local HydraDB container available. To reproduce the second deterministic ordering, use `python3 -m evals.run --seed 1 --output-dir /tmp/hydrawitness-eval-order-1`. These commands add new, randomly scoped data to the existing database. Repeated runs accumulate data. Output files are overwritten within the chosen output directory. HydraDB errors, incomplete pages, split failures and checksum mismatches cause a nonzero exit.
 
 ## Data and isolation
 
