@@ -7,29 +7,217 @@
 body{font-family:'Avenir Next',Avenir,sans-serif;background:#efeee7}header{height:78px;background:#f8f7f0;border-bottom:2px solid #202c25;padding:0 4vw}.brand{font-size:19px;letter-spacing:-.06em}.mark{background:#b63322;color:#fff;border-radius:0;width:37px;height:37px}.shell{max-width:1600px;padding:40px 4vw}.eyebrow,.sectionlabel{letter-spacing:.13em}.intro{border-bottom:1px solid #aeb7a9;padding-bottom:28px;margin-bottom:22px;gap:20px}.intro h1{font-size:clamp(36px,4vw,64px);letter-spacing:-.055em}.intro p{font-size:15px}.badge{border-radius:0;background:none;border-color:#abb6a8;white-space:nowrap}.panel{border-radius:0;box-shadow:0 3px 0 #dddcd2}.panelhead{border-bottom:1px solid var(--line);background:#f9f9f4}.panelhead h2{text-transform:uppercase;letter-spacing:.1em;font-size:11px}.button{border-radius:0;background:#234d3b}.verdict,.stat{border-radius:0}.graphpanel .canvas{background-color:#fafaf5}.tour-launch{border:1px solid #1c3529;background:#e5ebdf;color:#203a2e;padding:10px 15px;font:700 11px 'Avenir Next',sans-serif;letter-spacing:.05em;cursor:pointer;white-space:nowrap}.tour-launch:hover,.tour-launch:focus-visible{background:#244a3b;color:white}.tour-shade{position:fixed;inset:0;background:rgba(13,24,18,.68);z-index:50}.tour-focus{position:relative!important;z-index:51!important;outline:4px solid #d95236!important;outline-offset:5px;box-shadow:0 0 0 7px #f4f3e9!important}.tour-card{position:fixed;z-index:52;bottom:24px;right:24px;width:min(410px,calc(100vw - 32px));background:#f9f8f1;color:#17241c;border:1px solid #17241c;padding:23px;box-shadow:7px 7px 0 #244a3b}.tour-card[hidden],.tour-shade[hidden]{display:none}.tour-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#a43729}.tour-close{background:none;border:0;font-size:25px;line-height:1;cursor:pointer;color:#25372c}.tour-card h2{font:normal 29px/1.12 Georgia,serif;letter-spacing:-.03em;margin:12px 0}.tour-card p{font-size:14px;line-height:1.55;margin:0 0 18px;color:#45554a}.tour-actions{display:flex;gap:10px}.tour-next,.tour-back{border:1px solid #263e30;padding:11px 15px;font:700 12px 'Avenir Next',sans-serif;cursor:pointer}.tour-next{background:#244a3b;color:white;flex:1}.tour-back{background:transparent}.tour-next:disabled{opacity:.6;cursor:wait}.tour-card :focus-visible,.tour-launch:focus-visible{outline:3px solid #d95236;outline-offset:3px}@media(max-width:700px){.headright .hide{display:none}.headright{gap:8px}.tour-launch{padding:8px;font-size:10px}.tour-card{bottom:12px;right:16px}.intro h1{font-size:36px}}
 
 @media(max-width:700px){.intro{flex-direction:column;align-items:flex-start}.intro h1{font-size:42px}.headright #connection{display:none}.brand{font-size:16px}.tour-launch{font-size:10px}.canvas svg{min-width:0}}
-</style></head><body><header><div class="brand"><span class="mark">H</span>HydraWitness</div><div class="headright"><span class="hide">EVIDENCE INTELLIGENCE / RELEASES</span><span id="connection" class="live">Connecting</span><button id="startTour" class="tour-launch" type="button">▶ &nbsp; Start walkthrough</button></div></header><main class="shell"><div class="intro"><div><div class="eyebrow">Release assurance &nbsp;/&nbsp; case 017</div><h1>The deployment everyone approved.</h1><p>Four reports. One origin. What does the evidence actually prove?</p></div><span class="badge">SYNTHETIC DEMO · ADVISORY</span></div><div id="error" class="error" role="alert"></div><div class="grid"><section class="panel"><div class="panelhead"><h2>Decision review</h2><span class="eyebrow">01 / assess</span></div><div class="panelbody"><div class="sectionlabel">Agent question</div><div class="question">Can we safely deploy checkout-v2?</div><div id="verdict" class="verdict"><div class="sectionlabel">Current recommendation</div><strong id="verdictText">Loading…</strong></div><div id="explanation" class="explanation"></div><hr class="rule"><div class="sectionlabel">Evidence audit</div><div id="audit"></div><button id="improve" class="button">Investigate missing evidence &nbsp;→</button><div class="hint">Reads and repairs a shared synthetic graph. The free hosted demo resets when the service restarts. No deployment action.</div></div></section><section class="panel graphpanel"><div class="panelhead"><h2>Evidence lineage</h2><div class="legend"><span>Report</span><span class="root">Origin</span><span class="fail">Skipped check</span></div></div><div class="canvas"><svg id="graph" viewBox="0 0 700 460" role="img" aria-label="Evidence lineage graph"></svg></div><div id="graphfoot" class="graphfoot">Reading provenance from HydraDB…</div></section><section class="panel"><div class="panelhead"><h2>Learning record</h2><span class="eyebrow">02 / improve</span></div><div class="panelbody"><div class="sectionlabel">This investigation</div><div class="stats"><div class="stat"><b id="sources">—</b><span>Sources discovered</span></div><div class="stat"><b id="edges">—</b><span>Relationships added</span></div><div class="stat"><b id="roots">—</b><span>Verified roots</span></div><div class="stat"><b id="queries">—</b><span>HydraDB queries</span></div></div><div class="sectionlabel">Decision change</div><div class="timeline"><span id="before">Not run</span><span class="arrow">→</span><span id="after">Current</span></div><hr class="rule"><div class="sectionlabel">Held-out accuracy · synthetic</div><svg id="chart" class="chart" viewBox="0 0 260 100" role="img" aria-label="Measured held-out accuracy across learning iterations"></svg><div class="micro">20 questions across 10 related evidence groups. Artifact-only also reached 20/20; graph-specific accuracy gains are unproven.</div><div class="resultnote">Persisted relationships let later agents reuse the investigation. This is a local synthetic fixture, not a production release gate.</div></div></section></div><footer><span>HYDRA<span style="color:#698e7e">WITNESS</span> &nbsp; / &nbsp; Evidence before confidence</span><span id="scope"></span></footer></main><div id="tourShade" class="tour-shade" hidden></div><aside id="tourCard" class="tour-card" role="dialog" aria-label="Guided walkthrough" aria-live="polite" hidden><div class="tour-top"><span id="tourCount"></span><button id="tourClose" class="tour-close" type="button" aria-label="Close walkthrough">×</button></div><h2 id="tourTitle"></h2><p id="tourText"></p><div class="tour-actions"><button id="tourBack" class="tour-back" type="button">Back</button><button id="tourNext" class="tour-next" type="button">Next</button></div></aside><script>
-const $=id=>document.getElementById(id);let initial=null, knownEdges=null;const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function graph(g,highlight=false){let nodes=g.sources||[], edges=g.edges||[];const uniq=new Map(edges.map(e=>[e.from+'|'+e.to+'|'+e.type,e]));edges=[...uniq.values()];const depths={};function depth(id,seen=new Set()){if(depths[id]!=null)return depths[id];if(seen.has(id))return 0;let s=new Set(seen);s.add(id);let parents=edges.filter(e=>e.from===id&&e.type==='DERIVED_FROM');return depths[id]=parents.length?1+Math.max(...parents.map(e=>depth(e.to,s))):0}nodes.forEach(n=>depth(n.id));let groups={};nodes.forEach(n=>{let d=n.type==='security_scan'?-1:depth(n.id);(groups[d]??=[]).push(n)});let keys=Object.keys(groups).map(Number).sort((a,b)=>b-a),pos={};keys.forEach((d,i)=>groups[d].forEach((n,j)=>pos[n.id]={x:100+i*(500/Math.max(1,keys.length-1)),y:85+(j+1)*(300/(groups[d].length+1))}));let currentEdges=new Set(edges.map(e=>e.from+'|'+e.to+'|'+e.type));let svg='<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#a5b2a9"/></marker></defs>';edges.forEach(e=>{let a=pos[e.from],b=pos[e.to];if(a&&b)svg+=`<line x1="${a.x+51}" y1="${a.y}" x2="${b.x-53}" y2="${b.y}" stroke="${e.type==='REQUIRES'?'#c46c5e':highlight&&knownEdges&&!knownEdges.has(e.from+'|'+e.to+'|'+e.type)?'#3b8c6b':'#b0bcb2'}" stroke-width="1.5" marker-end="url(#arrow)"/>`});nodes.forEach(n=>{let p=pos[n.id],bad=n.outcome==='skipped'||n.outcome==='failed',root=n.root_verified_fixture_assertion;let fill=bad?'#fff1ed':root?'#eaf4ec':'#fff',stroke=bad?'#dca296':root?'#9dc6a8':'#d7e1d8',label=n.id.split('/').pop().replaceAll('-',' ');svg+=`<g><rect x="${p.x-52}" y="${p.y-24}" width="104" height="48" rx="6" fill="${fill}" stroke="${stroke}"/><circle cx="${p.x-42}" cy="${p.y}" r="4" fill="${bad?'#c76552':root?'#65a37a':'#a8b4ab'}"/><text x="${p.x-33}" y="${p.y-2}" font-family="Avenir, sans-serif" font-size="10" font-weight="700" fill="#2b3d33">${esc(label.slice(0,13))}</text><text x="${p.x-33}" y="${p.y+12}" font-family="Avenir, sans-serif" font-size="8" fill="#8a9990">${esc(bad?'SCAN SKIPPED':root?'ORIGIN':n.type.toUpperCase())}</text></g>`});knownEdges=currentEdges;$('graph').innerHTML=svg||'<text x="240" y="220">No graph data available</text>'}
+.audit-group{margin-top:15px}.audit-group h3{margin:0;color:#697873;text-transform:uppercase;font-size:10px;letter-spacing:.1em}.audit-group .item span:last-child,.audit-subject{overflow-wrap:anywhere}.audit-subject{margin-top:10px;color:#4e5d55;font-size:12px}.audit-adverse .dot{background:var(--red)}
+
+.scenario-reset{display:block;margin-top:8px}.tour-launch:disabled,.button:disabled{opacity:.55;cursor:default}
+.follow-panel{margin-top:16px;padding:13px 12px;background:#edf1e9;border-left:3px solid #254f3a}
+.follow-panel h3{margin:0;color:#304e3f;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.follow-panel p{margin:5px 0 10px;color:#293b31;font-size:13px;line-height:1.4}
+.follow-result:not(:empty){display:grid;gap:5px;margin-top:12px;color:#364b40;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.follow-result strong{font-size:14px}.follow-result .block{color:#902e22}
+.impact-panel{border-top:1px solid var(--line);padding:16px 20px}.impact-panel h3{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.1em}.impact-panel p,.impact-result{font-size:12px;color:#4e5d55}.impact-panel label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}.impact-panel select{max-width:100%;padding:8px;border:1px solid var(--line);background:white;color:var(--ink)}.impact-panel button{margin-left:7px}.impact-result{overflow-wrap:anywhere}.impact-result ol{padding-left:20px}.impact-result li{margin:4px 0}.impact-result article{margin-top:12px}.impact-result strong{color:var(--ink)}
+</style></head><body><header><div class="brand"><span class="mark">H</span>HydraWitness</div><div class="headright"><span class="hide">EVIDENCE INTELLIGENCE / RELEASES</span><span id="connection" class="live">Connecting</span><button id="startTour" class="tour-launch" type="button" disabled>▶ &nbsp; Start walkthrough</button></div></header><main class="shell"><div class="intro"><div><div class="eyebrow">Release assurance &nbsp;/&nbsp; case 017</div><h1>The deployment everyone approved.</h1><p>Four reports. One origin. What does the evidence actually prove?</p></div><span class="badge">SYNTHETIC DEMO · ADVISORY</span></div><div id="error" class="error" role="alert"></div><div class="grid"><section class="panel"><div class="panelhead"><h2>Decision review</h2><span class="eyebrow">01 / assess</span></div><div class="panelbody"><div class="sectionlabel">Agent question</div><div class="question">Can we safely deploy checkout-v2?</div><div id="verdict" class="verdict"><div class="sectionlabel">Current recommendation</div><strong id="verdictText">Loading…</strong></div><div id="explanation" class="explanation"></div><hr class="rule"><div class="sectionlabel">Evidence audit</div><div id="audit"></div><button id="improve" class="button" type="button" disabled>Investigate missing evidence &nbsp;→</button><button id="newScenario" class="tour-launch scenario-reset" type="button" disabled>Start fresh</button><div class="hint">Your browser tab uses its own temporary synthetic graph.</div></div></section><section class="panel graphpanel"><div class="panelhead"><h2>Evidence lineage</h2><div class="legend"><span>Report</span><span class="root">Origin</span><span class="fail">Skipped check</span></div></div><div class="canvas"><svg id="graph" viewBox="0 0 700 460" role="img" aria-label="Evidence lineage graph"></svg></div><div id="graphfoot" class="graphfoot">Reading provenance from HydraDB…</div><section class="impact-panel" aria-labelledby="impactTitle"><h3 id="impactTitle">Scan impact preview</h3><p>See which release claims would need reassessment if a linked scan were invalidated. This preview makes no changes.</p><label for="impactScan">Security scan</label><select id="impactScan" disabled><option value="">No scans available</option></select><button id="impactButton" class="tour-launch" type="button" disabled>Preview impact →</button><div id="impactResult" class="impact-result" role="status" aria-live="polite">Investigate evidence to discover scans.</div></section></section><section class="panel"><div class="panelhead"><h2>Learning record</h2><span class="eyebrow">02 / improve</span></div><div class="panelbody"><div class="sectionlabel">This investigation</div><div class="stats"><div class="stat"><b id="sources">—</b><span>Sources discovered</span></div><div class="stat"><b id="edges">—</b><span>Relationships added</span></div><div class="stat"><b id="roots">—</b><span>Verified roots</span></div><div class="stat"><b id="queries">—</b><span>HydraDB queries</span></div></div><div class="sectionlabel">Decision change</div><div class="timeline"><span id="before">Not run</span><span class="arrow">→</span><span id="after">Current</span></div><section id="followPanel" class="follow-panel"><h3>Second claim</h3><p>Has checkout-v2 cleared its required security checks?</p><button id="followUp" class="tour-launch" type="button" disabled>Check stored evidence →</button><div id="followResult" role="status" class="follow-result"></div></section><hr class="rule"><div class="sectionlabel">Held-out accuracy · historical</div><svg id="chart" class="chart" viewBox="0 0 260 100" role="img" aria-label="Measured held-out accuracy across learning iterations"></svg><div class="micro">20 questions across 10 related evidence groups. Artifact-only also reached 20/20; graph-specific accuracy gains are unproven.</div></div></section></div><footer><span>HYDRA<span style="color:#698e7e">WITNESS</span> &nbsp; / &nbsp; Evidence before confidence</span><span id="scope"></span></footer></main><div id="tourShade" class="tour-shade" hidden></div><aside id="tourCard" class="tour-card" role="dialog" aria-label="Guided walkthrough" aria-live="polite" hidden><div class="tour-top"><span id="tourCount"></span><button id="tourClose" class="tour-close" type="button" aria-label="Close walkthrough">×</button></div><h2 id="tourTitle"></h2><p id="tourText"></p><div class="tour-actions"><button id="tourBack" class="tour-back" type="button">Back</button><button id="tourNext" class="tour-next" type="button">Next</button></div></aside><script>
+const $=id=>document.getElementById(id);let scenario=null, scenarioScope=null, knownEdges=null, improved=false, busy=false, impactVersion=0;const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function graph(g,highlight=false){let nodes=g.sources||[], edges=g.edges||[];const uniq=new Map(edges.map(e=>[e.from+'|'+e.to+'|'+e.type,e]));edges=[...uniq.values()];const depths={};function depth(id,seen=new Set()){if(depths[id]!=null)return depths[id];if(seen.has(id))return 0;let s=new Set(seen);s.add(id);let parents=edges.filter(e=>e.from===id&&e.type==='DERIVED_FROM');return depths[id]=parents.length?1+Math.max(...parents.map(e=>depth(e.to,s))):0}nodes.forEach(n=>depth(n.id));let groups={};nodes.forEach(n=>{let d=n.type==='security_scan'?-1:depth(n.id);(groups[d]??=[]).push(n)});let keys=Object.keys(groups).map(Number).sort((a,b)=>b-a),pos={};keys.forEach((d,i)=>groups[d].forEach((n,j)=>pos[n.id]={x:100+i*(500/Math.max(1,keys.length-1)),y:85+(j+1)*(300/(groups[d].length+1))}));let currentEdges=new Set(edges.map(e=>e.from+'|'+e.to+'|'+e.type));let svg='<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#a5b2a9"/></marker></defs>';edges.forEach(e=>{let a=pos[e.from],b=pos[e.to];if(a&&b)svg+=`<line x1="${a.x+51}" y1="${a.y}" x2="${b.x-53}" y2="${b.y}" stroke="${e.type==='REQUIRES'?'#c46c5e':highlight&&knownEdges&&!knownEdges.has(e.from+'|'+e.to+'|'+e.type)?'#3b8c6b':'#b0bcb2'}" stroke-width="1.5" marker-end="url(#arrow)"/>`});nodes.forEach(n=>{let p=pos[n.id],bad=n.outcome==='skipped'||n.outcome==='failed',root=n.root_verified_fixture_assertion;let fill=bad?'#fff1ed':root?'#eaf4ec':'#fff',stroke=bad?'#dca296':root?'#9dc6a8':'#d7e1d8',label=n.id.split('/').pop().replaceAll('-',' ');svg+=`<g><rect x="${p.x-52}" y="${p.y-24}" width="104" height="48" rx="6" fill="${fill}" stroke="${stroke}"/><circle cx="${p.x-42}" cy="${p.y}" r="4" fill="${bad?'#c76552':root?'#65a37a':'#a8b4ab'}"/><text x="${p.x-33}" y="${p.y-2}" font-family="Avenir, sans-serif" font-size="10" font-weight="700" fill="#2b3d33">${esc(label.slice(0,13))}</text><text x="${p.x-33}" y="${p.y+12}" font-family="Avenir, sans-serif" font-size="8" fill="#8a9990">${esc(bad?'SCAN '+n.outcome.toUpperCase():root?'ORIGIN':n.type.toUpperCase())}</text></g>`});knownEdges=currentEdges;$('graph').innerHTML=svg||'<text x="240" y="220">No graph data available</text>'}
 function chart(rows){let pts=rows.map((r,i)=>`${20+i*53},${85-70*r.correct/r.total}`).join(' ');$('chart').innerHTML=`<line x1="20" y1="85" x2="235" y2="85" stroke="#e1e9e1"/><polyline points="${pts}" fill="none" stroke="#3c8069" stroke-width="2.5"/>`+rows.map((r,i)=>`<circle cx="${20+i*53}" cy="${85-70*r.correct/r.total}" r="3.5" fill="#3c8069"/><text x="${13+i*53}" y="98" font-size="9" fill="#8c9a91">${r.iteration}</text>`).join('')}
-function render(a,g,queries,highlight=false){$('connection').textContent='HydraDB connected';$('verdictText').textContent=a.verdict.replaceAll('_',' ');$('verdict').className='verdict '+(a.verdict==='BLOCK'?'block':a.verdict==='APPROVE'?'approve':'');$('explanation').textContent=a.explanation;$('roots').textContent=a.verified_roots.length;$('queries').textContent=queries;$('scope').textContent='SCOPE / '+window.scope;let gaps=a.gaps.filter(x=>x.kind!=='contradictory_outcome');$('audit').innerHTML=(gaps.length?gaps.slice(0,4).map(x=>`<div class="item"><span class="dot"></span><span>${esc(x.kind.replaceAll('_',' '))}: ${esc(x.reference)}</span></div>`):['No unresolved evidence gaps'].map(x=>`<div class="item"><span class="dot" style="background:#55966e"></span><span>${x}</span></div>`)).join('');$('graphfoot').textContent=`${a.supporting_documents} supporting reports · ${a.verified_roots.length} verified root(s) · relationships read from HydraDB`;graph(g,highlight)}
-async function load(){try{let res=await fetch('/api/state'),j=await res.json();if(!res.ok)throw Error(j.error);window.scope=j.graph_scope;initial=j.assessment.verdict;render(j.assessment,j.provenance,j.hydradb_query_count);chart(j.accuracy);$('after').textContent=initial.replaceAll('_',' ')}catch(e){$('connection').textContent='Connection error';$('error').style.display='block';$('error').textContent='Could not load live graph: '+e.message;$('improve').disabled=true}}
-$('improve').onclick=async()=>{let b=$('improve');b.disabled=true;b.textContent='Investigating…';try{let r=await fetch('/api/improve',{method:'POST'}),j=await r.json();if(!r.ok)throw Error(j.error);let x=j.improvement;$('sources').textContent=x.sources_ingested;$('edges').textContent=x.edges_added;$('before').textContent=x.before.verdict.replaceAll('_',' ');$('after').textContent=x.after.verdict.replaceAll('_',' ');render(x.after,j.provenance,j.hydradb_query_count,true);b.textContent='Investigation complete'}catch(e){$('error').style.display='block';$('error').textContent='Investigation failed: '+e.message;b.disabled=false;b.textContent='Retry investigation'}};load();
+function renderAudit(gaps, subject) {
+  const subjectKinds = {git_commit: 'Git commit', artifact_digest: 'artifact digest'};
+  const labels = {
+    missing_release_subject: 'Release identity is missing',
+    invalid_release_subject: 'Release identity is invalid',
+    missing_scan_subject: 'Scan identity is missing',
+    invalid_scan_subject: 'Scan identity is invalid',
+    scan_subject_mismatch: 'Scan identity does not match the release'
+  };
+  const unresolved = gaps.filter(gap => gap.kind !== 'contradictory_outcome');
+  const adverse = gaps.filter(gap => gap.kind === 'contradictory_outcome');
+  const unresolvedItems = unresolved.map(gap =>
+    `<div class="item"><span class="dot" aria-hidden="true"></span><span>${esc(labels[gap.kind] ?? gap.kind.replaceAll('_', ' '))}${gap.reference != null ? `: ${esc(gap.reference)}` : ''}${gap.kind === 'scan_subject_mismatch' && gap.scan_subject ? `<br>Observed scan subject (${esc(subjectKinds[gap.scan_subject.kind] ?? gap.scan_subject.kind)}): ${esc(gap.scan_subject.value)}` : ''}</span></div>`
+  ).join('');
+  const adverseItems = adverse.map(finding =>
+    `<div class="item"><span class="dot" aria-hidden="true"></span><span>${esc(finding.reference)} — ${esc(finding.outcome ?? 'outcome not recorded')}</span></div>`
+  ).join('');
+  const empty = '<div class="item">None reported</div>';
+  $('audit').innerHTML = `
+    ${subject ? `<div class="audit-subject"><strong>Release subject (${esc(subjectKinds[subject.kind] ?? subject.kind)}):</strong> ${esc(subject.value)}</div>` : ''}
+    <section class="audit-group"><h3>Unresolved evidence gaps</h3>${unresolvedItems || empty}</section>
+    <section class="audit-group audit-adverse"><h3>Confirmed adverse findings</h3>${adverseItems || empty}</section>
+  `;
+}
+function render(a,g,queries,highlight=false){$('connection').textContent='HydraDB connected';$('verdictText').textContent=a.verdict.replaceAll('_',' ');$('verdict').className='verdict '+(a.verdict==='BLOCK'?'block':a.verdict==='APPROVE'?'approve':'');$('explanation').textContent=a.explanation;$('roots').textContent=a.verified_roots.length;$('queries').textContent=queries;$('scope').textContent='SCOPE / '+scenarioScope;renderAudit(a.gaps,a.subject);$('graphfoot').textContent=`${a.supporting_documents} supporting reports · ${a.verified_roots.length} verified root(s) · relationships read from HydraDB`;graph(g,highlight);updateImpactScans(g)}
+function updateImpactScans(g) {
+  const scans = (g.sources || []).filter(source => source.type === 'security_scan');
+  const select = $('impactScan'), selected = select.value;
+  select.innerHTML = scans.length ? scans.map(source => `<option value="${esc(source.id)}">${esc(source.id)}</option>`).join('') : '<option value="">No scans available</option>';
+  if (scans.some(source => source.id === selected)) select.value = selected;
+  select.disabled = busy || !scans.length;
+  $('impactButton').disabled = busy || !scans.length;
+  $('impactResult').textContent = scans.length ? 'Select a scan to preview its impact.' : 'No scans available in the current evidence.';
+}
+$('impactScan').onchange = () => {
+  impactVersion++;
+  $('impactButton').disabled = busy || !$('impactScan').value;
+  $('impactResult').textContent = 'Select Preview impact to check this scan.';
+};
+$('impactButton').onclick = async () => {
+  const scan = $('impactScan').value, requestScenario = scenario, version = ++impactVersion;
+  if (!scan) return;
+  $('impactButton').disabled = true;
+  $('impactResult').textContent = 'Loading impact preview…';
+  const params = new URLSearchParams({scan_id: scan});
+  if (requestScenario) params.set('scenario', requestScenario);
+  try {
+    const data = await api('/api/scan-impact?' + params);
+    if (version !== impactVersion || requestScenario !== scenario) return;
+    const claims = data.impacted_claims || [];
+    $('impactResult').innerHTML = claims.length ? claims.map(claim => `<article><strong>${esc(claim.claim_id)}</strong> — reassessment required<ol>${claim.path.map(edge => `<li>${esc(edge.from)} ${esc(({SUPPORTS:'supports',DERIVED_FROM:'is derived from',REQUIRES:'requires'})[edge.type] ?? edge.type)} ${esc(edge.to)}</li>`).join('')}</ol></article>`).join('') : 'No release claims require reassessment for this scan.';
+  } catch (error) {
+    if (version === impactVersion && requestScenario === scenario) $('impactResult').textContent = 'Could not load impact preview: ' + error.message;
+  } finally {
+    if (version === impactVersion && requestScenario === scenario) $('impactButton').disabled = busy || !$('impactScan').value;
+  }
+};
+async function api(path, method = 'GET') {
+  const response = await fetch(path, {method});
+  const data = await response.json();
+  if (!response.ok) throw Error(data.error);
+  return data;
+}
+
+function setBusy(value) {
+  busy = value;
+  $('impactScan').disabled = busy || !$('impactScan').value;
+  $('impactButton').disabled = busy || !$('impactScan').value;
+  $('startTour').disabled = busy || !scenario;
+  $('newScenario').disabled = busy;
+  $('improve').disabled = busy || !scenario || improved;
+  $('followUp').disabled = busy || !improved;
+}
+
+function showError(message = '') {
+  $('error').textContent = message;
+  $('error').style.display = message ? 'block' : 'none';
+}
+
+async function startScenario() {
+  showError();
+  impactVersion++;
+  setBusy(true);
+  try {
+    const data = await api('/api/scenario', 'POST');
+    scenario = data.scenario;
+    scenarioScope = data.graph_scope;
+    knownEdges = null;
+    improved = false;
+    $('improve').textContent = 'Investigate missing evidence →';
+    $('sources').textContent = '—';
+    $('edges').textContent = '—';
+    $('before').textContent = 'Not run';
+    $('after').textContent = data.assessment.verdict.replaceAll('_', ' ');
+    $('followResult').replaceChildren();
+    render(data.assessment, data.provenance, data.hydradb_query_count);
+    chart(data.accuracy);
+    return true;
+  } catch (error) {
+    if (!scenario) $('connection').textContent = 'Connection error';
+    showError('Could not start a fresh graph. ' + error.message);
+    return false;
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function investigate() {
+  if (improved) return true;
+  showError();
+  impactVersion++;
+  setBusy(true);
+  $('improve').textContent = 'Investigating…';
+  try {
+    const data = await api('/api/improve?scenario=' + scenario, 'POST');
+    const investigation = data.improvement;
+    $('sources').textContent = investigation.sources_ingested;
+    $('edges').textContent = investigation.edges_added;
+    $('before').textContent = investigation.before.verdict.replaceAll('_', ' ');
+    $('after').textContent = investigation.after.verdict.replaceAll('_', ' ');
+    render(investigation.after, data.provenance, data.hydradb_query_count, true);
+    $('improve').textContent = 'Investigation complete';
+    improved = true;
+    return true;
+  } catch (error) {
+    showError('Investigation failed. ' + error.message);
+    $('improve').textContent = 'Retry investigation';
+    return false;
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function checkFollowUp() {
+  setBusy(true);
+  $('followResult').textContent = 'Reading the stored graph…';
+  try {
+    const data = await api('/api/follow-up?scenario=' + scenario);
+    const assessment = data.assessment;
+    const findings = assessment.gaps.filter(gap => gap.kind === 'contradictory_outcome');
+    $('followResult').innerHTML = `
+      <strong class="${assessment.verdict === 'BLOCK' ? 'block' : ''}">${esc(assessment.verdict.replaceAll('_', ' '))}</strong>
+      <span>${esc(assessment.explanation)}</span>
+      ${assessment.verified_roots.length ? `<span>Stored origin · ${esc(assessment.verified_roots.join(', '))}</span>` : ''}
+      ${findings.map(finding => `<span>${esc(finding.reference)} · ${esc(finding.outcome)}</span>`).join('')}
+      <span>${data.sources_ingested} new ingestions · ${data.edges_added} new relationships · ${data.hydradb_query_count} read queries</span>
+    `;
+    return true;
+  } catch (error) {
+    $('followResult').textContent = 'Follow-up check failed. ' + error.message;
+    return false;
+  } finally {
+    setBusy(false);
+  }
+}
+
+$('newScenario').onclick = startScenario;
+$('improve').onclick = investigate;
+$('followUp').onclick = checkFollowUp;
+startScenario();
 
 // The walkthrough operates the same investigation button as a visitor; no results are simulated.
 const tourSteps=[
  {target:'.intro',title:'Start with a question.',text:'Four reports seem to support a release. But are they independent, and has the required security check actually run?'},
  {target:'.grid .panel:first-child',title:'Read the current decision.',text:'The decision panel assesses the evidence available now. REVIEW REQUIRED means the chain is incomplete; this is an advisory synthetic example.'},
- {target:'#improve',title:'Investigate the gaps.',text:'Next, we will click Investigate for you. HydraWitness follows recorded references, adds available evidence to HydraDB, and reassesses the claim.', action:true},
- {target:'.graphpanel',title:'Follow the evidence.',text:'The graph shows how reports connect to their source and required scan. A red scan means the required check was skipped.'},
- {target:'.grid .panel:last-child',title:'See what changed.',text:'The learning record shows the evidence found and the result. The chart is a separate, small synthetic benchmark; an artifact-only method matched its final accuracy.'},
- {target:'.intro',title:'Now explore for yourself.',text:'Close this walkthrough to inspect the graph and run the investigation. This free demo uses a shared temporary graph that resets when the service restarts.'}
+ {target:'#improve',title:'Investigate the gaps.',text:'Next, we will click Investigate for you. HydraWitness follows recorded references, adds available evidence to HydraDB, and reassesses the claim.', action:investigate, next:'Run investigation →', pending:'Investigating…'},
+ {target:'.graphpanel',title:'Follow the evidence.',text:'The graph shows how reports connect to their source and required scan. A red scan records a failed or skipped check. The evidence audit shows which findings apply to the current decision.'},
+ {target:'.grid .panel:last-child',title:'See what changed.',text:'The learning record shows the evidence found and the result. The chart shows a synthetic benchmark run before scans were tied to release identities. An artifact-only method matched its final accuracy.'},
+ {target:'#followPanel',title:'Check a second claim.',text:'The security claim follows the relationships saved by the first investigation.', action:checkFollowUp, next:'Check second claim →', pending:'Checking stored evidence…'},
+ {target:'#followPanel',title:'Read the second decision.',text:'The follow-up shows the decision, the skipped scan, and the number of sources or relationships added by the check.'}
 ];
 let tourIndex=0,tourTarget=null;
-function showTour(){const step=tourSteps[tourIndex];if(tourTarget)tourTarget.classList.remove('tour-focus');tourTarget=document.querySelector(step.target);tourTarget.classList.add('tour-focus');tourTarget.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});$('tourCount').textContent=`WALKTHROUGH / ${String(tourIndex+1).padStart(2,'0')} — ${String(tourSteps.length).padStart(2,'0')}`;$('tourTitle').textContent=step.title;$('tourText').textContent=step.text;$('tourBack').hidden=tourIndex===0;$('tourNext').textContent=step.action?'Run investigation →':tourIndex===tourSteps.length-1?'Explore the demo':'Next →';}
+function showTour(){const step=tourSteps[tourIndex];if(tourTarget)tourTarget.classList.remove('tour-focus');tourTarget=document.querySelector(step.target);tourTarget.classList.add('tour-focus');tourTarget.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});$('tourCount').textContent=`WALKTHROUGH / ${String(tourIndex+1).padStart(2,'0')} — ${String(tourSteps.length).padStart(2,'0')}`;$('tourTitle').textContent=step.title;$('tourText').textContent=step.text;$('tourBack').hidden=tourIndex===0;$('tourNext').textContent=step.action?step.next:tourIndex===tourSteps.length-1?'Explore the demo':'Next →';}
 function endTour(){if(tourTarget)tourTarget.classList.remove('tour-focus');$('tourShade').hidden=true;$('tourCard').hidden=true;$('startTour').focus();}
-$('startTour').onclick=()=>{tourIndex=0;$('tourShade').hidden=false;$('tourCard').hidden=false;showTour();$('tourNext').focus()};
+$('startTour').onclick=async()=>{if(improved && !await startScenario())return;tourIndex=0;$('tourShade').hidden=false;$('tourCard').hidden=false;showTour();$('tourNext').focus()};
 $('tourClose').onclick=endTour;$('tourBack').onclick=()=>{if(tourIndex>0){tourIndex--;showTour()}};
-$('tourNext').onclick=async()=>{if(tourIndex===tourSteps.length-1)return endTour();if(tourSteps[tourIndex].action){const btn=$('improve');if(btn.disabled&&btn.textContent.includes('Investigating'))return;const next=$('tourNext');next.disabled=true;next.textContent='Investigating…';try{if(!btn.disabled)await btn.onclick();if($('error').style.display==='block')throw Error($('error').textContent);if($('verdictText').textContent!=='BLOCK')throw Error('The investigation did not return the expected result.');}catch(e){$('tourText').textContent='The live investigation could not finish: '+e.message+' You can close the walkthrough and retry.';next.disabled=false;next.textContent='Retry investigation';return}next.disabled=false;}tourIndex++;showTour()};
+$('tourNext').onclick = async () => {
+  if (tourIndex === tourSteps.length - 1) return endTour();
+  const step = tourSteps[tourIndex];
+  if (step.action) {
+    if (busy) return;
+    const next = $('tourNext');
+    next.disabled = true;
+    $('tourBack').disabled = true;
+    next.textContent = step.pending;
+    const completed = await step.action();
+    next.disabled = false;
+    $('tourBack').disabled = false;
+    if (!completed) {
+      $('tourText').textContent = 'The live graph request failed. You can retry this step.';
+      next.textContent = 'Retry';
+      return;
+    }
+    if ($('tourCard').hidden) return;
+  }
+  tourIndex++;
+  showTour();
+};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('tourCard').hidden)endTour()});
 
 </script></body></html>

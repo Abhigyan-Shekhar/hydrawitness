@@ -1,6 +1,7 @@
 [
   {
     "id": "shared-origin",
+    "subject": {"kind": "git_commit", "value": "fca3fba3c16359e6a89a77d0333a2e25a4d1ad9f"},
     "sources": [
       "demo/qa",
       "demo/security-summary"
@@ -13,6 +14,7 @@
   },
   {
     "id": "independent",
+    "subject": {"kind": "artifact_digest", "value": "sha256:29002960b044228f1ad068e648c854cce25b95fd2e7669256b3f8c34c8abb050"},
     "sources": [
       "independent/a",
       "independent/b"
@@ -26,6 +28,7 @@
   },
   {
     "id": "missing-scan",
+    "subject": {"kind": "git_commit", "value": "667edce8942e8fb0746eb6267c8a15269e39ed87"},
     "sources": [
       "missing/report"
     ],
@@ -67,6 +70,7 @@
   },
   {
     "id": "contradiction",
+    "subject": {"kind": "git_commit", "value": "4e9a20613a551d17d508882adbebaafe9223f164"},
     "sources": [
       "contradiction/report"
     ],
@@ -98,6 +102,7 @@
   },
   {
     "id": "successful-scan",
+    "subject": {"kind": "git_commit", "value": "2939bbaef9aba3b4af0fb767d41053b1249e366d"},
     "sources": [
       "passed/report"
     ],

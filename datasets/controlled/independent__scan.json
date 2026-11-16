@@ -6,5 +6,6 @@
   "root_verified": true,
   "observed_at": "2026-11-14T00:00:00Z",
   "content": "Synthetic artifact independent/scan",
-  "outcome": "passed"
+  "outcome": "passed",
+  "subject": {"kind": "artifact_digest", "value": "sha256:29002960b044228f1ad068e648c854cce25b95fd2e7669256b3f8c34c8abb050"}
 }
