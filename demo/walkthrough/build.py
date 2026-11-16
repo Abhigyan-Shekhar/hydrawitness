@@ -1,0 +1,30 @@
+"""Build a concise narrated film from a real HydraWitness walkthrough recording."""
+from pathlib import Path
+import csv,json,subprocess
+from PIL import Image,ImageDraw,ImageFont
+R=Path(__file__).resolve().parents[2]; O=R/'demo/walkthrough'; O.mkdir(exist_ok=True); W,H=1440,900
+S='/System/Library/Fonts/Supplemental/Georgia.ttf'; B='/System/Library/Fonts/Supplemental/Arial Bold.ttf'; A='/System/Library/Fonts/Supplemental/Arial.ttf'
+def font(size,kind='sans'):return ImageFont.truetype({'serif':S,'bold':B,'sans':A}[kind],size)
+def board(index,kicker,title,sub):
+ im=Image.new('RGB',(W,H),'#f1f0e9');d=ImageDraw.Draw(im);d.rectangle((0,0,19,H),fill='#b63322');d.rectangle((72,68,116,112),fill='#b63322');d.text((84,73),'H',font=font(29,'serif'),fill='white');d.text((132,78),'HYDRAWITNESS  /  EVIDENCE BEFORE CONFIDENCE',font=font(19,'bold'),fill='#254336');d.line((72,145,1368,145),fill='#89978b',width=2);d.text((73,188),kicker.upper(),font=font(19,'bold'),fill='#b63322');d.text((70,245),title,font=font(69,'serif'),fill='#18251c',spacing=16);d.text((75,470),sub,font=font(27),fill='#536157',spacing=12);d.line((72,800,1368,800),fill='#a4b0a4',width=2);d.text((74,822),'SYNTHETIC EVIDENCE  /  ADVISORY ONLY',font=font(17,'bold'),fill='#68776d');d.text((1318,822),f'{index:02}',font=font(19,'bold'),fill='#a63729');return im,d
+im,d=board(1,'The problem','Four reports.\nOne source.','AI-assisted decisions need evidence you can trace.');d.text((75,646),'THE QUESTION ISN’T HOW MANY REPORTS AGREE.\nIT’S WHAT THEIR AGREEMENT IS BUILT ON.',font=font(21,'bold'),fill='#28503d',spacing=9);im.save(O/'title.png')
+rows=list(csv.DictReader((R/'evals/results/iterations.csv').open()));assert [int(x['accuracy_correct']) for x in rows]==[10,14,14,16,20]
+stats=json.loads((R/'evals/repeated-results/results.json').read_text())['summary'];assert stats['graph']['queries']==672 and stats['metadata']['queries']==852
+im,d=board(3,'Measured, with limits','Evidence improves\nthe answer.','20 correlated synthetic held-out questions, not production accuracy.');d.rectangle((75,570,650,750),fill='#244a3b');d.text((105,587),'10 / 20  →  20 / 20',font=font(53,'bold'),fill='#f7f7ef');d.text((109,687),'AFTER DISCOVERING MISSING EVIDENCE',font=font(16,'bold'),fill='#d6e4d5');d.rectangle((680,570,1368,750),outline='#adb8aa',width=2);d.text((708,596),'672  vs  852',font=font(50,'bold'),fill='#244a3b');d.text((710,687),'GRAPH QUERIES VS METADATA RECONSTRUCTION',font=font(16,'bold'),fill='#5b6c60');d.text((75,765),'Artifact-only also reached 20/20; graph-specific accuracy improvement is unproven.',font=font(17),fill='#5b6c60');im.save(O/'metrics.png')
+im,d=board(4,'Explore it','Evidence before\nconfidence.','Inspect the graph. Follow the sources. Ask a better question.');d.rectangle((75,610,930,690),fill='#244a3b');d.text((100,631),'hydrawitness-hackathon.onrender.com',font=font(25,'bold'),fill='#fff');d.text((75,727),'A FREE, SHARED DEMO. GRAPH STATE RESETS ON RESTART.',font=font(17,'bold'),fill='#a63729');im.save(O/'end.png')
+source=O/'site.webm';assert source.exists(), 'Run record.py against a fresh scope first'
+duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(source)],text=True))
+scenes=[('title.png',9,'Four reports can all agree and still share the same weak source. HydraWitness helps you trace the evidence before you trust the answer.'),('site.webm',duration,'The walkthrough starts with a real synthetic release question. The reports look reassuring, but the evidence chain is incomplete. We run the investigation. HydraWitness follows the references and stores the discovered relationships in the open source HydraDB engine. The required security scan was skipped, so the advisory result changes from review required to block. The graph shows the shared origin and the missing check, and the learning record shows what was found.'),('metrics.png',17,'In a small correlated synthetic benchmark, held-out decisions improved from ten out of twenty to twenty out of twenty after evidence discovery. An artifact-only approach matched the final accuracy. In a separate local reuse workload, stored graph relationships required six hundred seventy-two queries versus eight hundred fifty-two.'),('end.png',10,'Try HydraWitness for yourself. The live demo is synthetic and advisory, and its shared graph resets when the free service restarts.')]
+parts=[]
+for i,(name,seconds,line) in enumerate(scenes):
+ voice=O/f'voice-{i}.aiff';audio=O/f'audio-{i}.m4a';video=O/f'video-{i}.mp4';part=O/f'part-{i}.mp4'
+ subprocess.run(['say','-v','Samantha','-r','175','-o',str(voice),line],check=True)
+ vd=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(voice)],text=True));speed=max(1,vd/(seconds-.4));assert speed<1.4,(i,vd,seconds)
+ subprocess.run(['ffmpeg','-v','error','-y','-i',str(voice),'-af',f'atempo={speed},apad,atrim=0:{seconds},afade=t=in:st=0:d=0.15,afade=t=out:st={seconds-0.25}:d=0.25','-ar','48000','-c:a','aac','-b:a','160k',str(audio)],check=True)
+ if name.endswith('.png'):
+  cmd=['ffmpeg','-v','error','-y','-loop','1','-i',str(O/name),'-t',str(seconds),'-vf',"scale=1512:945,zoompan=z='min(zoom+0.00012,1.035)':d=1:s=1440x900:fps=24",'-an','-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p',str(video)]
+ else:
+  cmd=['ffmpeg','-v','error','-y','-i',str(source),'-t',str(seconds),'-vf','fps=24,format=yuv420p','-an','-c:v','libx264','-preset','veryfast','-crf','20',str(video)]
+ subprocess.run(cmd,check=True);subprocess.run(['ffmpeg','-v','error','-y','-i',str(video),'-i',str(audio),'-c','copy','-shortest',str(part)],check=True);parts.append(part);print('Scene',i,'complete',flush=True)
+concat=O/'concat.txt';concat.write_text(''.join(f"file '{p}'\n" for p in parts));final=R/'demo/hydrawitness-walkthrough.mp4'
+subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(concat),'-c','copy','-movflags','+faststart',str(final)],check=True);print(final)

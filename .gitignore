@@ -11,4 +11,7 @@ demo/final_cut/*
 !demo/final_cut/build.py
 demo/recut/*
 !demo/recut/build.py
+demo/walkthrough/*
+!demo/walkthrough/build.py
+!demo/walkthrough/record.py
 .codex/

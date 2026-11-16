@@ -2,7 +2,7 @@
 
 HydraWitness is an advisory evidence-verification layer for engineering and security teams. It investigates whether release recommendations share origins, locates referenced missing artifacts, and persists graph repairs for later questions. The current demonstration uses synthetic evidence and provides advisory decisions; it is not a production release gate.
 
-**Try the [live synthetic demo](https://hydrawitness-hackathon.onrender.com/).** It runs the open-source HydraDB engine on Render's free tier. Visitors share one temporary graph; it resets when the service sleeps or restarts and can take time to wake up. If someone already ran the investigation, the graph will show the repaired state.
+**Try the [live synthetic demo](https://hydrawitness-hackathon.onrender.com/).** Choose **Start walkthrough** for a guided investigation that runs the real action and explains the decision, graph, and benchmark. It runs the open-source HydraDB engine on Render's free tier. Visitors share one temporary graph; it resets when the service sleeps or restarts and can take time to wake up. If someone already ran the investigation, the graph will show the repaired state.
 
 For a disposable Docker demo, run `docker build -t hydrawitness .` and then `docker run --rm -p 127.0.0.1:8765:8765 -e PORT=8765 -e HYDRAWITNESS_BIND=0.0.0.0 hydrawitness`. Open `http://127.0.0.1:8765`. The Render free demo starts a fresh synthetic graph on each service start; visitors share it, and all changes disappear on restart. Do not use it for sensitive data.
 
